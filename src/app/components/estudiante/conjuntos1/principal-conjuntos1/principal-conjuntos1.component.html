@@ -1,0 +1,124 @@
+<div class="div-principal">
+    <div class="div-caja">
+        <mat-card class="mat-elevation-z3 contenido-card">
+            <mat-card-header fxLayout="column" fxLayoutAlign="center center">
+                <div class="contenedor-titulo-icono">
+                    <div class="contenedor-titulo">
+                        Unión
+                    </div>
+                    <div *ngIf="!mostrarCheckUnion" class="contenedor-icono">
+                        <mat-icon>check</mat-icon>
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="content-1" fxLayout="column" fxLayoutAlign="center center">
+                <img src="assets/img/union.png" style="height: 91px;">
+            </mat-card-content>
+            <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+                <button class="buton-leer-mas" routerLink="/home-estudiante/union" mat-button>Leer más</button>
+                <button *ngIf="!practicarUnion" class="buton-practicar" routerLink="/home-estudiante/practicar-union-1"
+                    mat-button>Practicar</button>
+                <button *ngIf="!practicarDeNuevoUnion" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-union-1" mat-button>Practicar de nuevo</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="div-caja">
+        <mat-card class="mat-elevation-z3 contenido-card">
+            <mat-card-header class="card-header" fxLayout="column" fxLayoutAlign="center center">
+                <div class="contenedor-titulo-icono">
+                    <div class="contenedor-titulo">
+                        Intersección
+                    </div>
+                    <div *ngIf="!mostrarCheckInterseccion" class="contenedor-icono">
+                        <mat-icon>check</mat-icon>
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="content-1" fxLayout="column" fxLayoutAlign="center center">
+                <img src="assets/img/interseccion.png" style="height: 91px;">
+            </mat-card-content>
+            <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+                <button class="buton-leer-mas" routerLink="/home-estudiante/interseccion" mat-button>Leer más</button>
+                <button *ngIf="!practicarInterseccion" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-interseccion-1" mat-button>Practicar</button>
+                <button *ngIf="!practicarDeNuevoInterseccion" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-interseccion-1" mat-button>Practicar de nuevo</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="div-caja">
+        <mat-card class="mat-elevation-z3 contenido-card">
+            <mat-card-header class="card-header" fxLayout="column" fxLayoutAlign="center center">
+                <div class="contenedor-titulo-icono">
+                    <div class="contenedor-titulo">
+                        Diferencia
+                    </div>
+                    <div *ngIf="!mostrarCheckDiferencia" class="contenedor-icono">
+                        <mat-icon>check</mat-icon>
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="content-1" fxLayout="column" fxLayoutAlign="center center">
+                <img src="assets/img/diferencia.png" style="height: 91px;">
+            </mat-card-content>
+            <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+                <button class="buton-leer-mas" routerLink="/home-estudiante/diferencia" mat-button>Leer más</button>
+                <button *ngIf="!practicarDiferencia" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-diferencia-1" mat-button>Practicar</button>
+                <button *ngIf="!practicarDeNuevoDiferencia" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-diferencia-1" mat-button>Practicar de nuevo</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="div-caja">
+        <mat-card class="mat-elevation-z3 contenido-card">
+            <mat-card-header class="card-header" fxLayout="column" fxLayoutAlign="center center">
+                <div class="contenedor-titulo-icono">
+                    <div class="contenedor-titulo">
+                        Diferencia simétrica
+                    </div>
+                    <div *ngIf="!mostrarCheckDiferenciaS" class="contenedor-icono">
+                        <mat-icon>check</mat-icon>
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="content-1" fxLayout="column" fxLayoutAlign="center center">
+                <img src="assets/img/diferencia-simetrica.png" style="height: 91px;">
+            </mat-card-content>
+            <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+                <button class="buton-leer-mas" routerLink="/home-estudiante/diferenica-simetrica" mat-button>Leer
+                    más</button>
+                <button *ngIf="!practicarDiferenciaS" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-diferencia-simetrica-1" mat-button>Practicar</button>
+                <button *ngIf="!practicarDeNuevoDiferenciaS" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-diferencia-simetrica-1" mat-button>Practicar de
+                    nuevo</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="div-caja">
+        <mat-card class="mat-elevation-z3 contenido-card">
+            <mat-card-header class="card-header" fxLayout="column" fxLayoutAlign="center center">
+                <div class="contenedor-titulo-icono">
+                    <div class="contenedor-titulo">
+                        Evaluación
+                    </div>
+                    <div *ngIf="!mostrarCheckEvaluacion" class="contenedor-icono">
+                        <mat-icon>check</mat-icon>
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="content-1" fxLayout="column" fxLayoutAlign="center center">
+                <img src="assets/img/evaluacion.png" style="height: 91px;">
+            </mat-card-content>
+            <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+                <button *ngIf="!practicarEvaluacion" class="buton-practicar-evaluacion" (click)="evaluar()"
+                    mat-button>Evaluar</button>
+                <button *ngIf="!practicarDeNuevoEvaluacion" class="buton-practicar-evaluacion"
+                    (click)="evaluarDenuevo()" mat-button>Practicar de
+                    nuevo</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+</div>
