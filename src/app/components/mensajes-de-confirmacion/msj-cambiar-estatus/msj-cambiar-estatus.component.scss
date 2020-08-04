@@ -1,0 +1,41 @@
+.contenido-div {
+  margin: 0 auto;
+}
+
+.titulo-principal {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 15px;
+  color: black;
+}
+
+.subtitulo {
+  text-align: center;
+  margin: 3px;
+  font-size: 16px;
+  font-weight: normal;
+  color: gray;
+}
+
+#boton-si {
+  width: 100%;
+  height: 43px;
+  margin-top: 25px;
+  font-size: 17px;
+  font-weight: normal;
+  text-align: center;
+  color: #2e86c1;
+  border-top: 1px solid #e0e0e0;
+}
+
+#boton-no {
+  width: 100%;
+  height: 45px;
+  font-size: 17px;
+  font-weight: normal;
+  text-align: center;
+  color: black;
+  border-top: 1px solid #e0e0e0;
+}
