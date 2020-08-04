@@ -1,0 +1,80 @@
+<mat-toolbar>
+    Universidad Veracruzana
+</mat-toolbar>
+<div class="contenido">
+    <mat-grid-list cols="4" rowHeight="2rem">
+        <mat-grid-tile colspan="2" rowspan="20">
+            <img src="assets/img/AccesoFmath.png" class="imgCoFI">
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="2" class="gridSesion">
+            <div class="nombreSistema">
+                FMath
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="2" class="gridSesion">
+            <div class="inicioSesion">
+                Inicio de sesión
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="2" class="gridSesion">
+            <div class="errorMensaje">
+                {{mensajeSesion}}
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile colspan="2" rowspan="14">
+            <form class="divMatForm">
+                <mat-form-field class="matForm">
+                    <input matInput type="text" [formControl]="usuario" required>
+                    <mat-error id="errorInput" *ngIf="usuario.invalid">{{getErrorMessageUser()}}</mat-error>
+                    <mat-placeholder class="placeholder">Usuario</mat-placeholder>
+                </mat-form-field>
+                <mat-form-field class="matForm" id="inputPassword">
+                    <input matInput type="password" class="inputP" [formControl]="password"
+                        [type]="ocultarContrasena ? 'password' : 'text'" required>
+                    <button mat-icon-button matSuffix (click)="ocultarContrasena = !ocultarContrasena" [attr.aria-label]="'Hide password'"
+                        [attr.aria-pressed]="ocultarContrasena">
+                        <mat-icon>{{ocultarContrasena ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    </button>
+                    <mat-placeholder class="placeholder">Contraseña</mat-placeholder>
+                    <mat-error id="errorInput" *ngIf="password.invalid">{{getErrorMessagePass()}}</mat-error>
+                </mat-form-field>
+                <button class="mat-elevation-z10" mat-raised-button id="btnSesion" (click)="iniciarSesion()">Iniciar
+                    sesión</button>
+            </form>
+        </mat-grid-tile>
+    </mat-grid-list>
+</div>
+<div class="contenido2">
+    <div style="height: 100px;"></div>
+    <div class="nombreSistema">
+        FMath
+    </div>
+    <div class="inicioSesion">
+        Inicio de sesión
+    </div>
+    <div class="errorMensaje">&nbsp;
+        {{mensajeSesion}}
+    </div>
+    <form class="divMatForm">
+        <mat-form-field class="matForm">
+            <input matInput type="text" [formControl]="usuario" required>
+            <mat-error id="errorInput" *ngIf="usuario.invalid">{{getErrorMessageUser()}}</mat-error>
+            <mat-placeholder class="placeholder">Usuario</mat-placeholder>
+        </mat-form-field>
+        <mat-form-field class="matForm" id="inputPassword">
+            <input matInput type="password" class="inputP" [formControl]="password"
+                [type]="ocultarContrasena ? 'password' : 'text'" required>
+            <button mat-icon-button matSuffix (click)="ocultarContrasena = !ocultarContrasena" [attr.aria-label]="'Hide password'"
+                [attr.aria-pressed]="ocultarContrasena">
+                <mat-icon>{{ocultarContrasena ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            <mat-error id="errorInput" *ngIf="password.invalid">{{getErrorMessagePass()}}</mat-error>
+            <mat-placeholder class="placeholder">Contraseña</mat-placeholder>
+        </mat-form-field>
+        <button class="mat-elevation-z10" mat-raised-button id="btnSesion2" (click)="iniciarSesion()">Iniciar
+            sesión</button>
+    </form>
+</div>
+<ngx-spinner [hidden]="!mostrarLoader" bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">  
+    <p style="color:#c85305;">Buscando ...</p>  
+</ngx-spinner>
