@@ -1,0 +1,162 @@
+#contenido-ci {
+  background: transparent !important;
+  color: white;
+  padding: 0;
+  margin: 0 auto;
+  height: auto;
+  width: 80%;
+  margin-top: 25px !important;
+  margin-bottom: 5%;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+#contenido-ci form {
+  margin-bottom: 15px;
+}
+
+#contenido-ci form > * {
+  margin: 5px 0;
+}
+
+.card-header {
+  background: #1565c0;
+  color: white;
+  top: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  border-top-right-radius: 0.5em;
+  border-top-left-radius: 0.5em;
+}
+
+.mat-card-header-text {
+  margin: 0 0 0 0 !important;
+}
+
+.div-editar-estudiante {
+  width: 100%;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  font-weight: normal;
+}
+
+.div-volver-estudiante {
+  width: 5%;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 25px;
+}
+
+.icono-volver-estudiante {
+  font-size: 25px;
+}
+
+.div-titulo-editar {
+  width: 95%;
+  height: 40px;
+  font-size: 18px !important;
+  font: bold !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-content {
+  margin: 0 auto !important;
+  width: 95% !important;
+  background: transparent !important;
+  margin-bottom: 20px !important;
+}
+
+#mat-form1 {
+  margin-top: 10px;
+}
+
+.mat-form {
+  margin: 0 auto;
+  margin-top: 7px;
+  color: black;
+  width: 100%;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.mat-option {
+  background: white;
+  color: black !important;
+}
+
+.mat-select-panel {
+  background-color: #2980b9;
+}
+
+#errorInput {
+  font-size: 14px;
+}
+
+.mat-form-field-label {
+  color: gray !important;
+}
+
+.mat-form-field-underline {
+  margin-top: 0;
+  background-color: #e0e0e0 !important;
+}
+
+.mat-form-field-ripple {
+  background-color: #2e86c1 !important;
+}
+
+.card-action {
+  margin-top: 40px;
+  text-align: center;
+}
+
+mat-hint {
+  color: gray !important;
+  font-size: 14px !important;
+}
+
+#boton-guardar,
+#boton-cancelar {
+  margin-right: 30px;
+  background-color: #1565c0;
+  color: white;
+  font-size: 16px;
+  font-weight: normal;
+  width: 150px;
+  text-align: center;
+  border: none;
+}
+
+@media screen and (max-width: 600px) {
+  .card-content {
+    margin-bottom: 0px;
+  }
+  .card-action {
+    margin-top: 0px;
+    text-align: center;
+  }
+
+  .mat-form {
+    padding-left: 9px;
+    width: 95%;
+  }
+
+  #boton-guardar,
+  #boton-cancelar {
+    margin: 5px !important;
+  }
+
+  .icono-volver-estudiante {
+    margin-left: 10px;
+  }
+}

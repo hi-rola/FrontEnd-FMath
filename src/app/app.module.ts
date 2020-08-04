@@ -32,6 +32,10 @@ import { EncabezadoEstudianteComponent } from './components/encabezados/encabeza
 import { MenuComponent } from './components/encabezados/menu/menu/menu.component';
 import { AcercaDeComponent } from './components/encabezados/menu/acerca-de/acerca-de.component';
 import { MsjCerrarSesionComponent } from './components/encabezados/menu/msj-cerrar-sesion/msj-cerrar-sesion.component';
+import { PrincipalAcademicoComponent } from './components/academico/principal-academico/principal-academico.component';
+import { RegistrarEstudianteComponent } from './components/academico/registrar-estudiante/registrar-estudiante.component';
+import { EstudiantesRegistradosComponent } from './components/academico/estudiantes-registrados/estudiantes-registrados.component';
+import { EditarEstudianteComponent } from './components/academico/editar-estudiante/editar-estudiante.component';
 
 
 @NgModule({
@@ -40,7 +44,8 @@ import { MsjCerrarSesionComponent } from './components/encabezados/menu/msj-cerr
     MsjCambiarEstatusComponent, MsjCancelarRegistroComponent, MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent,
     MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent,
     MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent, Error401Component, Error404Component, EncabezadoAcademicoComponent,
-    EncabezadoEstudianteComponent, MenuComponent, AcercaDeComponent, MsjCerrarSesionComponent,
+    EncabezadoEstudianteComponent, MenuComponent, AcercaDeComponent, MsjCerrarSesionComponent, PrincipalAcademicoComponent,
+    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,

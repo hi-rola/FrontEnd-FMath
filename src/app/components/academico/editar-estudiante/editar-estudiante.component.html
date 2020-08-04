@@ -1,0 +1,117 @@
+<app-encabezado-academico></app-encabezado-academico>
+<mat-card class="mat-elevation-z4" id="contenido-ci">
+  <mat-card-header class="card-header">
+    <div class="div-editar-estudiante">
+      <div class="div-volver-estudiante">
+        <button mat-icon-button (click)="volverInicio()" matTooltip="Atrás" matTooltipClass="cerrar-sesion">
+          <mat-icon class="icono-volver-estudiante">keyboard_backspace</mat-icon>
+        </button>
+      </div>
+      <div class="div-titulo-editar">
+        Actualizar información estudiante
+      </div>
+    </div>
+  </mat-card-header>
+  <form [formGroup]='alumnoForm'>
+    <mat-card-content class="card-content" style="height: 80%;">
+      <mat-form-field class="mat-form" id="mat-form1">
+        <input matInput placeholder="Nombre completo" formControlName='nombre'>
+        <mat-error *ngIf="alumnoForm.controls['nombre'].touched || !alumnoForm.controls['nombre'].valid 
+        || alumnoForm.controls['nombre'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['nombre'].hasError('required')">
+            Falta colocar el nombre completo
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <mat-label>Matricula</mat-label>
+        <input matInput placeholder="Eje. zs16013998" [readonly]="true" formControlName='matricula' maxlength="10" style="color: gray;">
+        <mat-error errorInput *ngIf="alumnoForm.controls['matricula'].touched || !alumnoForm.controls['matricula'].valid 
+        || alumnoForm.controls['matricula'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['matricula'].hasError('required')">Falta colocar
+            la matricula
+          </mat-error>
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['matricula'].hasError('minlength')">
+            Ingrese una matrícula valida, ej. zs16013998
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <mat-label>Correo institucional</mat-label>
+        <input matInput placeholder="Eje. zs16013998@estudiantes.uv.mx" formControlName='correoInstitucional'>
+        <mat-error errorInput *ngIf="alumnoForm.controls['correoInstitucional'].touched || !alumnoForm.controls['correoInstitucional'].valid 
+        || alumnoForm.controls['correoInstitucional'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['correoInstitucional'].hasError('required')">
+            Falta colocar el correo institucional
+          </mat-error>
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['correoInstitucional'].hasError('email')">
+            Ingrese un correo valido ej. zs16013998@estudiantes.uv.mx
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <input matInput placeholder="Contraseña" formControlName='contrasena' type="password" minlength="6">
+        <mat-error *ngIf="alumnoForm.controls['contrasena'].touched || !alumnoForm.controls['contrasena'].valid 
+        || alumnoForm.controls['contrasena'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['contrasena'].hasError('required')">
+            Falta colocar la contraseña
+          </mat-error>
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['contrasena'].hasError('minlength')">
+            La contraseña debe tener al menos 6 caracteres
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <mat-select placeholder="Programa educativo" formControlName='programaEducativo'>
+          <mat-option value="LTC">Licienciatura en Tecnologías Computacionales</mat-option>
+          <mat-option value="LIS">Licienciatura en Ingeniería de Software</mat-option>
+          <mat-option value="LRSC">Licienciatura en Redes y Servicios de Cómputo</mat-option>
+        </mat-select>
+        <mat-error *ngIf="alumnoForm.controls['programaEducativo'].touched || !alumnoForm.controls['programaEducativo'].valid 
+        || alumnoForm.controls['programaEducativo'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['programaEducativo'].hasError('required')">
+            Falta colocar el programa educativo
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <mat-select placeholder="Sección" formControlName='seccion'>
+          <mat-option value="Sección 1">Sección 1</mat-option>
+          <mat-option value="Sección 2">Sección 2</mat-option>
+          <mat-option value="Sección 3">Sección 3</mat-option>
+        </mat-select>
+        <mat-error *ngIf="alumnoForm.controls['seccion'].touched || !alumnoForm.controls['seccion'].valid 
+        || alumnoForm.controls['seccion'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['seccion'].hasError('required')">
+            Falta colocar la sección
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+      <mat-form-field class="mat-form">
+        <mat-select placeholder="Bloque" formControlName='bloque'>
+          <mat-option value="Bloque 1">Bloque 1</mat-option>
+          <mat-option value="Bloque 2">Bloque 2</mat-option>
+          <mat-option value="Bloque 3">Bloque 3</mat-option>
+        </mat-select>
+        <mat-error *ngIf="alumnoForm.controls['bloque'].touched || !alumnoForm.controls['bloque'].valid 
+        || alumnoForm.controls['bloque'].dirty">
+          <mat-error id="errorInput" *ngIf="alumnoForm.controls['bloque'].hasError('required')">
+            Falta colocar el bloque
+          </mat-error>
+        </mat-error>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions class="card-action">
+      <button mat-stroked-button id="boton-guardar" class="mat-elevation-z3" (click)="actualizarAlumno()">
+        Guardar
+      </button>
+      <button mat-stroked-button id="boton-cancelar" class="mat-elevation-z3" (click)="cancelar()">
+        Cancelar
+      </button>
+    </mat-card-actions>
+  </form>
+</mat-card>
+<app-footer></app-footer>
+<ngx-spinner [hidden]="!mostrarLoader" bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">
+  <p style="color:white; font-size: 18px;">Procesando solicitud ...</p>
+</ngx-spinner>
