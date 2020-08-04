@@ -1,0 +1,38 @@
+#contenido-principal {
+  width: 80%;
+  background: white;
+  margin: 0 auto;
+  border-radius: 0.5em;
+  margin-bottom: 5%;
+}
+
+.content-card {
+  background: white;
+  width: 100%;
+}
+
+.div-principal {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#div-button {
+  width: auto;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.button-registrar {
+  color: gray;
+}
+
+.button-registrar:hover {
+  color: black;
+}
