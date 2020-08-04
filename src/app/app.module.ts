@@ -30,6 +30,8 @@ import { Error404Component } from './components/errores/error404/error404.compon
 import { EncabezadoAcademicoComponent } from './components/encabezados/encabezado-academico/encabezado-academico.component';
 import { EncabezadoEstudianteComponent } from './components/encabezados/encabezado-estudiante/encabezado-estudiante.component';
 import { MenuComponent } from './components/encabezados/menu/menu/menu.component';
+import { AcercaDeComponent } from './components/encabezados/menu/acerca-de/acerca-de.component';
+import { MsjCerrarSesionComponent } from './components/encabezados/menu/msj-cerrar-sesion/msj-cerrar-sesion.component';
 
 
 @NgModule({
@@ -38,8 +40,7 @@ import { MenuComponent } from './components/encabezados/menu/menu/menu.component
     MsjCambiarEstatusComponent, MsjCancelarRegistroComponent, MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent,
     MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent,
     MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent, Error401Component, Error404Component, EncabezadoAcademicoComponent,
-    EncabezadoEstudianteComponent,
-    MenuComponent,
+    EncabezadoEstudianteComponent, MenuComponent, AcercaDeComponent, MsjCerrarSesionComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
@@ -49,7 +50,7 @@ import { MenuComponent } from './components/encabezados/menu/menu/menu.component
     MsjAcademicoRegistradoComponent, MsjActualizarDatosComponent, MsjCambiarEstatusComponent, MsjCancelarRegistroComponent,
     MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent, MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent,
     MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent, MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent,
-    MenuComponent
+    MenuComponent, MsjCerrarSesionComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorhttpService, multi: true }

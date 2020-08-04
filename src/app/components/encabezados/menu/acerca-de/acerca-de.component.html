@@ -1,0 +1,39 @@
+<app-encabezado-estudiante *ngIf="mostrarEstudiante"></app-encabezado-estudiante>
+<app-encabezado-academico *ngIf="mostrarAcademico"></app-encabezado-academico>
+<mat-card class="mat-elevation-z4" id="contenido-principal">
+  <mat-card-header class="card-header">
+    <div class="div-encabezado-titulo">
+      <div class="div-icono-volver">
+          <button mat-icon-button (click)="volver()" matTooltip="Atrás" matTooltipClass="cerrar-sesion">
+              <mat-icon class="icono-volver-acerca">keyboard_backspace</mat-icon>
+          </button>
+      </div>
+      <div class="div-titulo-principal">
+          Acerca de
+      </div>
+  </div>
+  </mat-card-header>
+  <mat-card-content class="card-content">
+      <div class="mensaje-principal">
+          <p class="sistema">Constancias Académicos FI</p>
+          <p>Sistema para los estudiantes y profesores de la Facultad de Estadística e Informática en
+              específico quienes cursen la EE Fundamentos de Matemáticas. Donde es posible consultar
+              información y practicar ejercicios del saber teórico conjuntos. 
+          </p>
+      </div>
+      <div class="div-desarrollo">
+        <p class="sistema">Desarrollo</p>
+        <p>José Rolando García Alba</p>
+        <p style="font-weight: bold;">Desarrollada y diseñado por:</p>
+        <p>José Rolando García Alba</p>
+    </div>
+    <div class="div-desarrollo">
+        <p class="sistema">Contacto</p>
+        <p>zs16013998@estudiantes.uv.mx ó rolaalbaa@gmail.com</p>
+    </div>
+    <div class="div-version">
+        <p class="sistema">Versión</p>
+        <p>Versión 1.0</p>
+    </div>
+  </mat-card-content>
+</mat-card>
