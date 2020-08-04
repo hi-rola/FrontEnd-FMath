@@ -36,6 +36,11 @@ import { PrincipalAcademicoComponent } from './components/academico/principal-ac
 import { RegistrarEstudianteComponent } from './components/academico/registrar-estudiante/registrar-estudiante.component';
 import { EstudiantesRegistradosComponent } from './components/academico/estudiantes-registrados/estudiantes-registrados.component';
 import { EditarEstudianteComponent } from './components/academico/editar-estudiante/editar-estudiante.component';
+import { AcademicosRegistradosComponent } from './components/administrador/academicos-registrados/academicos-registrados.component';
+import { EditarAcademicoComponent } from './components/administrador/editar-academico/editar-academico.component';
+import { PrincipalAdministrador1Component } from './components/administrador/principal-administrador1/principal-administrador1.component';
+import { PrincipalAdministrador2Component } from './components/administrador/principal-administrador2/principal-administrador2.component';
+import { RegistrarAcademicoComponent } from './components/administrador/registrar-academico/registrar-academico.component';
 
 
 @NgModule({
@@ -45,7 +50,7 @@ import { EditarEstudianteComponent } from './components/academico/editar-estudia
     MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent,
     MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent, Error401Component, Error404Component, EncabezadoAcademicoComponent,
     EncabezadoEstudianteComponent, MenuComponent, AcercaDeComponent, MsjCerrarSesionComponent, PrincipalAcademicoComponent,
-    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent,
+    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent, AcademicosRegistradosComponent, EditarAcademicoComponent, PrincipalAdministrador1Component, PrincipalAdministrador2Component, RegistrarAcademicoComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
