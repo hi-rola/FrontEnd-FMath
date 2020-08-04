@@ -1,0 +1,74 @@
+#toolbar {
+  background: #0d47a1;
+  color: #fff;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.row-uv {
+  height: 1.7em;
+}
+
+.nombreSistema {
+  background: #2e7d32;
+  height: 2.1em;
+  font-size: 18px;
+  padding: 5px;
+}
+
+#nombreUsuario {
+  padding-right: 5px;
+}
+
+.alinearDerecha {
+  flex: 1 1 auto;
+}
+
+#contenido-principal {
+  width: 80%;
+  background: white;
+  margin: 0 auto;
+  margin-top: 30px !important;
+  border-radius: 0.2em;
+}
+
+.content-card {
+  background: white;
+  width: 100%;
+}
+
+.div-principal {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#div-button {
+  width: auto;
+  padding: 5px;
+  font-size: 16px;
+  font-weight: normal;
+  display: flex;
+  justify-content: center;
+}
+
+.button-registrar {
+  color: gray;
+}
+
+.button-registrar:hover {
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  .ocultar-usuario {
+    display: none;
+  }
+
+  .ocultar-nombre-sistema {
+    display: none;
+  }
+}

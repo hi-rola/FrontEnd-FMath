@@ -1,0 +1,22 @@
+<mat-toolbar class="mat-elevation-z8" id="toolbar">
+    <mat-toolbar-row class="row-uv" fxLayout="row" fxLayoutAlign="end center">
+        <span>Universidad Veracruzana</span>
+    </mat-toolbar-row>
+    <mat-toolbar-row class="nombreSistema">
+        <button routerLink="/home-administrador" mat-icon-button matTooltip="Inicio" matTooltipClass="sesion"
+            matTooltipPosition="below">
+            <mat-icon>home</mat-icon>
+        </button>
+        <span class="ocultar-nombre-sistema">FMath</span>
+        <span class="alinearDerecha"></span>
+        <div>
+            <span id="nombreUsuario" class="ocultar-usuario">
+                {{nombreAcademico}}</span>
+            <button (click)="abrirMenu()" mat-icon-button matTooltip="Cuenta" matTooltipClass="sesion"
+                matTooltipPosition="below">
+                <mat-icon>account_circle</mat-icon>
+            </button>
+        </div>
+    </mat-toolbar-row>
+</mat-toolbar>
+<div style="height: 30px;"></div>
