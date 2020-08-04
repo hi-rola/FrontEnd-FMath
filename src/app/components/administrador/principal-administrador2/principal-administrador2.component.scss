@@ -1,0 +1,74 @@
+#contenido-principal {
+  width: 80%;
+  background: white;
+  margin: 0 auto;
+  border-radius: 0.5em;
+  margin-bottom: 5%;
+}
+
+.content-card {
+  background: white;
+  width: 100%;
+}
+
+.mat-menu-item {
+  font-size: 16px;
+  font-weight: normal;
+  color: gray !important;
+}
+
+button.mat-menu-item {
+  background-color: white;
+}
+
+button.mat-menu-item:hover {
+  font-size: 16px;
+  font-weight: normal;
+  color: black !important;
+}
+
+.div-principal {
+  width: 100%;
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: space-around;
+}
+
+#div-button {
+  width: auto;
+  font-size: 16px;
+  font-weight: normal;
+  display: flex;
+  flex-direction: inline;
+  justify-content: center;
+}
+
+#button {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.button-estudiantes,
+.button-ejercicios {
+  color: gray;
+}
+
+.button-estudiantes:hover,
+.button-ejercicios:hover {
+  color: black;
+}
+
+@media screen and (max-width: 600px) {
+  #div-button {
+    font-size: 14px !important;
+    font-weight: normal;
+  }
+
+  #button {
+    font-size: 14px;
+    font-weight: normal;
+  }
+}
