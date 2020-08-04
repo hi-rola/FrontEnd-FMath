@@ -1,0 +1,29 @@
+<div class="contenidoDialog">
+    <div class="divIcon">
+        <mat-icon class="iconPerson">account_circle</mat-icon>
+    </div>
+    <div class="contenidoNombre">
+        <b>{{nombreUsuario}}</b>
+        <p class="rolUsuario">{{correoUsuario}}</p>
+    </div>
+    <div class="div-menu">
+        <div class="div-icono">
+            <mat-icon class="icono">meeting_room</mat-icon>
+        </div>
+        <div class="div-boton">
+            <button mat-button (click)="cerrarSesion()">
+                Cerrar sesión
+            </button>
+        </div>
+    </div>
+    <div class="div-menu">
+        <div class="div-icono">
+            <mat-icon class="icono">info</mat-icon>
+        </div>
+        <div class="div-boton">
+            <button mat-button (click)="mostrarAcercade()">
+                Acerca de
+            </button>
+        </div>
+    </div>
+</div>
