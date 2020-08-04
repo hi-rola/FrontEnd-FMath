@@ -25,15 +25,21 @@ import { MsjEstudianteRegistradoComponent } from './components/mensajes-de-confi
 import { MsjExisteAcademicoComponent } from './components/mensajes-de-confirmacion/msj-existe-academico/msj-existe-academico.component';
 import { MsjRegistrarAcademicoComponent } from './components/mensajes-de-confirmacion/msj-registrar-academico/msj-registrar-academico.component';
 import { MsjResgistrarEstudianteComponent } from './components/mensajes-de-confirmacion/msj-resgistrar-estudiante/msj-resgistrar-estudiante.component';
-
+import { Error401Component } from './components/errores/error401/error401.component';
+import { Error404Component } from './components/errores/error404/error404.component';
+import { EncabezadoAcademicoComponent } from './components/encabezados/encabezado-academico/encabezado-academico.component';
+import { EncabezadoEstudianteComponent } from './components/encabezados/encabezado-estudiante/encabezado-estudiante.component';
+import { MenuComponent } from './components/encabezados/menu/menu/menu.component';
 
 
 @NgModule({
   declarations: [
     AppComponent, LoginComponent, FooterComponent, MsjAcademicoRegistradoComponent, MsjActualizarDatosComponent,
     MsjCambiarEstatusComponent, MsjCancelarRegistroComponent, MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent,
-    MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent, 
-    MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent,
+    MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent,
+    MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent, Error401Component, Error404Component, EncabezadoAcademicoComponent,
+    EncabezadoEstudianteComponent,
+    MenuComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
@@ -42,7 +48,8 @@ import { MsjResgistrarEstudianteComponent } from './components/mensajes-de-confi
   entryComponents: [
     MsjAcademicoRegistradoComponent, MsjActualizarDatosComponent, MsjCambiarEstatusComponent, MsjCancelarRegistroComponent,
     MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent, MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent,
-    MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent, MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent
+    MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent, MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent,
+    MenuComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorhttpService, multi: true }
