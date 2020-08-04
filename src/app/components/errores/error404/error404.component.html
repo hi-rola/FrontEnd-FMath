@@ -1,0 +1,21 @@
+<app-encabezado-estudiante></app-encabezado-estudiante>
+<mat-card class="mat-elevation-z3 card-contenido">
+    <div class="card">
+        <div class="div-contenido" style="margin-bottom: 20px;">
+            <img src="assets/img/warning.png" style="height: 80px;">
+        </div>
+        <div class="div-contenido">
+            <span class="mensaje1">Lo sentimos, esta págna no está disponible.</span>
+        </div>
+        <div class="div-contenido">
+            <span class="mensaje2">Es posible que el enlace que seleccionaste esté dañado o que se haya eliminado de la
+                página.</span>
+        </div>
+        <div class="div-contenido" style="margin-top: 25px; margin-bottom: 30px !important;">
+            <button mat-raised-button (click)="volverInicio()" matTooltip="Ir a la página de inicio del sistema"
+                matTooltipClass="sesion">
+                <span>Volver a FMath</span>
+            </button>
+        </div>
+    </div>
+</mat-card>

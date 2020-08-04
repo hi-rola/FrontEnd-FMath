@@ -1,0 +1,20 @@
+<app-encabezado-estudiante [error]="true"></app-encabezado-estudiante>
+<mat-card class="mat-elevation-z3 card-contenido">
+    <div class="card">
+        <div class="div-contenido" style="margin-bottom: 20px;">
+            <img src="assets/img/user.png" style="height: 90px;">
+        </div>
+        <div class="div-contenido">
+            <span class="mensaje1">Usuario no autorizado</span>
+        </div>
+        <div class="div-contenido">
+            <span class="mensaje2">¡Por favor inicia sesión en el sistema!</span>
+        </div>
+        <div class="div-contenido" style="margin-top: 25px; margin-bottom: 30px !important;">
+            <button mat-raised-button (click)="iniciarSesion()" matTooltip="Identifícate con tu cuenta institucional"
+                matTooltipClass="sesion">
+                <span>Iniciar sesión</span>
+            </button>
+        </div>
+    </div>
+</mat-card>

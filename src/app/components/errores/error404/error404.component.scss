@@ -1,0 +1,46 @@
+.card-contenido {
+  margin: 0 auto;
+  margin-top: 15px;
+  width: 80%;
+  height: 280px;
+  background-color: white;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px !important;
+}
+
+.div-contenido {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+}
+
+.mensaje1 {
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.mensaje2 {
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.mat-raised-button {
+  color: white;
+  background-color: #0d47a1;
+}
+
+.alineadoDerecha {
+  text-align: right;
+}
+
+.mat-card-subtitle {
+  color: black;
+}
