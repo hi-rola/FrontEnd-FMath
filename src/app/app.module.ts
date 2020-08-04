@@ -12,10 +12,11 @@ import { AppComponent } from './app.component';
 import { MaterialDesignModule } from './models/MaterialDesign.module';
 import { InterceptorhttpService } from './services/interceptorhttp.service';
 import { LoginComponent } from './components/login/login.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
-    AppComponent, LoginComponent
+    AppComponent, LoginComponent, FooterComponent
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule, 
