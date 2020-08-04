@@ -1,0 +1,37 @@
+<app-encabezado-academico></app-encabezado-academico>
+<mat-card class="mat-elevation-z4" id="contenido-principal">
+    <mat-card-content class="content-card">
+        <div class="div-principal">
+            <div id="div-button">
+                <button mat-button [matMenuTriggerFor]="menuEstudiante" id="button">
+                    <mat-icon class="mat-icon">group</mat-icon>
+                    Estudiantes
+                </button>
+                <mat-menu #menuEstudiante="matMenu">
+                    <button class="registrar-est" mat-menu-item routerLink="/registrar-estudiante">
+                        <mat-icon class="registrar-est">person_add</mat-icon>
+                        <span>Registrar estudiante</span>
+                    </button>
+                </mat-menu>
+            </div>
+            <div id="div-button" class="boton-registrar">
+                <button mat-button [matMenuTriggerFor]="menuAcademico" class="button-registrar" id="button">
+                    <mat-icon>group</mat-icon>
+                    Academicos
+                </button>
+                <mat-menu #menuAcademico="matMenu">
+                    <button mat-menu-item routerLink="/academicos-registrados">
+                        <mat-icon>group</mat-icon>
+                        <span>Academicos registrados</span>
+                    </button>
+                    <button mat-menu-item routerLink="/registrar-academico">
+                        <mat-icon>person_add</mat-icon>
+                        <span>Registrar académico</span>
+                    </button>
+                </mat-menu>
+            </div>
+        </div>
+        <app-estudiantes-registrados></app-estudiantes-registrados>
+    </mat-card-content>
+</mat-card>
+<app-footer></app-footer>
