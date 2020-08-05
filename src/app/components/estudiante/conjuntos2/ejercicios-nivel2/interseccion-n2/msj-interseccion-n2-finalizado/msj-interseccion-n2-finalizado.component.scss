@@ -1,0 +1,47 @@
+#card-nivel {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  color: black;
+}
+
+.card-content-nivel {
+  margin: 0 auto !important;
+  width: 95% !important;
+  margin-top: 5px !important;
+}
+
+.mat-card-header-text {
+  margin: 0 0 0 0 !important;
+}
+
+.div-nivel {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.div-img-nivel {
+  display: flex;
+  justify-content: center;
+}
+
+.boton-inicio-interseccion {
+  margin-bottom: 8px !important;
+  font-size: 16px;
+  font-weight: normal;
+  text-align: center !important;
+  width: 100%;
+  border: none;
+  color: gray;
+  border-top: 1px solid #e0e0e0 !important;
+}
+
+.boton-inicio-interseccion:hover {
+  color: black;
+}
