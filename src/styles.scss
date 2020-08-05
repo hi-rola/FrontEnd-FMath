@@ -1,4 +1,94 @@
-/* You can add global styles to this file, and also import other style files */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 3px;
+  background-color: #a6acaf;
+  border-radius: 4px !important;
+}
+
+.mat-form-field-ripple {
+  background-color: #0d47a1 !important;
+}
+
+.sesion,
+.home, .cerrar-sesion {
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.msj-registrar-estudiante .mat-dialog-container,
+.msj-registrar-academico .mat-dialog-container {
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0;
+  background: white !important;
+}
+
+.msj-estudiante-registrado,
+.msj-estudiante-eliminado,
+.msj-estudiante-actualizado,
+.msj-academico-registrado {
+  background: #43a047;
+  color: white !important;
+  max-height: 50px !important;
+}
+
+.msj-estudiante-existe,
+.msj-academico-existe {
+  background: #cd6155;
+  color: white !important;
+  max-height: 50px !important;
+}
+
+.dialogSesion .mat-dialog-container {
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0;
+  background: white !important;
+}
+
+.dialogCancelar .mat-dialog-container {
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0;
+  background: white !important;
+}
+
+.msj-nivel-finalizado
+.mat-dialog-container {
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0;
+  background: white !important;
+}
+
+.msj-evaluacion
+.mat-dialog-container {
+  overflow: hidden;
+  border-radius: 4px;
+  padding: 0;
+  background: white !important;
+}
+
+.mat-button-focus-overlay {
+  background-color: transparent !important;
+}
