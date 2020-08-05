@@ -1,0 +1,35 @@
+<app-encabezado-estudiante></app-encabezado-estudiante>
+<mat-card class="mat-elevation-z4 card-conjuntos">
+    <mat-card-header class="card-header-conjuntos">
+        <div class="div-encabezado-titulo">
+            <div class="div-icono-volver">
+                <button mat-icon-button routerLink="/home-estudiante" matTooltip="Atrás"
+                    matTooltipClass="cerrar-sesion">
+                    <mat-icon class="icono-volveri-diferencia">keyboard_backspace</mat-icon>
+                </button>
+            </div>
+            <div class="div-titulo-principal">
+                Diferencia
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+        <div>
+            <h3>Diferencia</h3>
+            <p class="parrafo">La diferencia entre dos conjuntos A y B, da como resultado un tercer
+                conjunto formado por los elementos que pertenecen a A y no
+                pertenecen a B. Se simboliza A - B y se lee “A diferencia con B” <br />
+                Ejemplo: Encontrar la diferencia del conjunto A y B (A - B)
+            </p>
+            <div style="display: flex; justify-content: center;">
+                <img style="max-width: 280px;" src="assets/img/ejemplo-diferencia.png">
+            </div>
+
+            <p class="parrafo">Representación en diagrama de Venn</p>
+            <div style="display: flex; justify-content: center;">
+                <img style="max-width: 280px;" src="assets/img/ejemplo-diferencia-venn.png">
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
+<app-footer></app-footer>
