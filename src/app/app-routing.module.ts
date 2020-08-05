@@ -12,6 +12,17 @@ import { PrincipalAdministrador1Component } from './components/administrador/pri
 import { AcercaDeComponent } from './components/encabezados/menu/acerca-de/acerca-de.component';
 import { Error401Component } from './components/errores/error401/error401.component';
 import { Error404Component } from './components/errores/error404/error404.component';
+import { PrincipalEstudianteComponent } from './components/estudiante/principal-estudiante/principal-estudiante.component';
+import { GuardiaEstudianteService } from './services/guardias/guardia-estudiante.service';
+import { TeoriaUnionComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-union/teoria-union.component';
+import { UnionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/union-n1/union-n1.component';
+import { TeoriaInterseccionComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-interseccion/teoria-interseccion.component';
+import { InterseccionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/interseccion-n1/interseccion-n1.component';
+import { TeoriaDiferenciaComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-diferencia/teoria-diferencia.component';
+import { DiferenciaN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-n1/diferencia-n1.component';
+import { TeoriaDiferenciaSimetricaComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-diferencia-simetrica/teoria-diferencia-simetrica.component';
+import { DiferenciaSimetricaN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-simetrica-n1/diferencia-simetrica-n1.component';
+import { InformacionTeoriaElementalComponent } from './components/estudiante/introduccion-conjuntos/informacion-teoria-elemental/informacion-teoria-elemental.component';
 
 
 
@@ -25,6 +36,16 @@ const routes: Routes = [
   { path: 'academicos-registrados', component: PrincipalAdministrador2Component },
   { path: 'actualizar-informacion-academico/:id', component: EditarAcademicoComponent },
   { path: 'home-administrador', component: PrincipalAdministrador1Component },
+  { path: 'home-estudiante', component: PrincipalEstudianteComponent, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/teoria-elemental-conjuntos', component: InformacionTeoriaElementalComponent, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/union', component: TeoriaUnionComponent, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-union-1', component: UnionN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/interseccion', component: TeoriaInterseccionComponent, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-interseccion-1', component: InterseccionN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/diferencia', component: TeoriaDiferenciaComponent, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-diferencia-1', component: DiferenciaN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/diferenica-simetrica', component: TeoriaDiferenciaSimetricaComponent, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-diferencia-simetrica-1', component: DiferenciaSimetricaN1Component, canActivate: [GuardiaEstudianteService]},
   { path: 'acerca-de', component: AcercaDeComponent },
   { path: '401', component: Error401Component },
   { path: '**', component: Error404Component}
