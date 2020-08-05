@@ -41,6 +41,26 @@ import { EditarAcademicoComponent } from './components/administrador/editar-acad
 import { PrincipalAdministrador1Component } from './components/administrador/principal-administrador1/principal-administrador1.component';
 import { PrincipalAdministrador2Component } from './components/administrador/principal-administrador2/principal-administrador2.component';
 import { RegistrarAcademicoComponent } from './components/administrador/registrar-academico/registrar-academico.component';
+import { PrincipalEstudianteComponent } from './components/estudiante/principal-estudiante/principal-estudiante.component';
+import { IntroduccionConjuntosComponent } from './components/estudiante/introduccion-conjuntos/introduccion-conjuntos.component';
+import { InformacionTeoriaElementalComponent } from './components/estudiante/introduccion-conjuntos/informacion-teoria-elemental/informacion-teoria-elemental.component';
+import { PrincipalConjuntos1Component } from './components/estudiante/conjuntos1/principal-conjuntos1/principal-conjuntos1.component';
+import { TeoriaDiferenciaComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-diferencia/teoria-diferencia.component';
+import { TeoriaUnionComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-union/teoria-union.component';
+import { TeoriaInterseccionComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-interseccion/teoria-interseccion.component';
+import { TeoriaDiferenciaSimetricaComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-diferencia-simetrica/teoria-diferencia-simetrica.component';
+import { PrincipalConjuntos2Component } from './components/estudiante/conjuntos2/principal-conjuntos2/principal-conjuntos2.component';
+import { EvaluacionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/evaluacion-n1/evaluacion-n1.component';
+import { MsjEvaluacionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/evaluacion-n1/msj-evaluacion-n1/msj-evaluacion-n1.component';
+import { DiferenciaN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-n1/diferencia-n1.component';
+import { DiferenciaSimetricaN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-simetrica-n1/diferencia-simetrica-n1.component';
+import { InterseccionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/interseccion-n1/interseccion-n1.component';
+import { UnionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/union-n1/union-n1.component';
+import { MsjDiferenciaN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-n1/msj-diferencia-n1-finalizado/msj-diferencia-n1-finalizado.component';
+import { MsjDiferenciaSimetricaN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-simetrica-n1/msj-diferencia-simetrica-n1-finalizado/msj-diferencia-simetrica-n1-finalizado.component';
+import { MsjEvaluacionN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/evaluacion-n1/msj-evaluacion-n1-finalizado/msj-evaluacion-n1-finalizado.component';
+import { MsjInterseccionN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/interseccion-n1/msj-interseccion-n1-finalizado/msj-interseccion-n1-finalizado.component';
+import { MsjUnionN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/union-n1/msj-union-n1-finalizado/msj-union-n1-finalizado.component';
 
 
 @NgModule({
@@ -50,7 +70,14 @@ import { RegistrarAcademicoComponent } from './components/administrador/registra
     MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent,
     MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent, Error401Component, Error404Component, EncabezadoAcademicoComponent,
     EncabezadoEstudianteComponent, MenuComponent, AcercaDeComponent, MsjCerrarSesionComponent, PrincipalAcademicoComponent,
-    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent, AcademicosRegistradosComponent, EditarAcademicoComponent, PrincipalAdministrador1Component, PrincipalAdministrador2Component, RegistrarAcademicoComponent,
+    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent, AcademicosRegistradosComponent, 
+    EditarAcademicoComponent, PrincipalAdministrador1Component, PrincipalAdministrador2Component, RegistrarAcademicoComponent, 
+    PrincipalEstudianteComponent, IntroduccionConjuntosComponent, InformacionTeoriaElementalComponent, PrincipalConjuntos1Component, 
+    TeoriaDiferenciaComponent, TeoriaUnionComponent, TeoriaInterseccionComponent, TeoriaDiferenciaSimetricaComponent, 
+    PrincipalConjuntos2Component, EvaluacionN1Component, MsjEvaluacionN1Component, DiferenciaN1Component, 
+    DiferenciaSimetricaN1Component, InterseccionN1Component, UnionN1Component, MsjDiferenciaN1FinalizadoComponent, 
+    MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent, 
+    MsjUnionN1FinalizadoComponent, 
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
@@ -60,7 +87,10 @@ import { RegistrarAcademicoComponent } from './components/administrador/registra
     MsjAcademicoRegistradoComponent, MsjActualizarDatosComponent, MsjCambiarEstatusComponent, MsjCancelarRegistroComponent,
     MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent, MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent,
     MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent, MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent,
-    MenuComponent, MsjCerrarSesionComponent
+    MenuComponent, MsjCerrarSesionComponent, MsjEvaluacionN1Component, MsjDiferenciaN1FinalizadoComponent, 
+    MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent,
+    MsjUnionN1FinalizadoComponent
+
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorhttpService, multi: true }
