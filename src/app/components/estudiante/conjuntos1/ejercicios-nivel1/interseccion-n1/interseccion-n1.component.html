@@ -1,0 +1,672 @@
+<app-encabezado-estudiante></app-encabezado-estudiante>
+<mat-card class="mat-elevation-z4 card-interseccion-1">
+    <mat-card-header class="card-header-interseccion-1">
+        <div class="div-encabezado-interseccion-1">
+            <div class="div-volver-interseccion-1">
+                <button mat-icon-button routerLink="/home-estudiante" matTooltip="Atrás"
+                    matTooltipClass="cerrar-sesion">
+                    <mat-icon class="icono-volver-interseccion-1">keyboard_backspace</mat-icon>
+                </button>
+            </div>
+            <div class="div-titulo-interseccion-1">
+                Intersección 
+            </div>
+        </div>
+    </mat-card-header>
+    <mat-card-content class="card-content-interseccion-1">
+        <mat-accordion>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionUno" [expanded]="step === 0"
+                (opened)="setStep(0)" [disabled]="!habilitarExpansionPanelPregeunta1">
+                <mat-expansion-panel-header fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono1">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : a) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
+                                <div class="div-solucion-c">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                </div>
+                                <div class="div-boton-solucion-c">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionDos" [expanded]="step === 1"
+                (opened)="setStep(1)" [disabled]="!habilitarExpansionPanelPregeunta2">
+                <mat-expansion-panel-header>
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono2">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : d) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
+                                <div class="div-solucion-a">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
+                                </div>
+                                <div class="div-boton-solucion-a">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
+                                <div class="div-solucion-c">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                </div>
+                                <div class="div-boton-solucion-c">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionTres" [expanded]="step === 2"
+                (opened)="setStep(2)" [disabled]="!habilitarExpansionPanelPregeunta3">
+                <mat-expansion-panel-header>
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono3">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : b) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
+                                <div class="div-solucion-a">
+                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
+                                </div>
+                                <div class="div-boton-solucion-a">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
+                                <div class="div-solucion-c">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                </div>
+                                <div class="div-boton-solucion-c">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionCuatro" [expanded]="step === 3"
+                (opened)="setStep(3)" [disabled]="!habilitarExpansionPanelPregeunta4">
+                <mat-expansion-panel-header>
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono4">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : c) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
+                                <div class="div-solucion-a">
+                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
+                                </div>
+                                <div class="div-boton-solucion-a">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionCinco" [expanded]="step === 4"
+                (opened)="setStep(4)" [disabled]="!habilitarExpansionPanelPregeunta5">
+                <mat-expansion-panel-header fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono5">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : a) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
+                                <div class="div-solucion-c">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                </div>
+                                <div class="div-boton-solucion-c">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionSeis" [expanded]="step === 5"
+                (opened)="setStep(5)" [disabled]="!habilitarExpansionPanelPregeunta6">
+                <mat-expansion-panel-header>
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono6">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : c) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
+                                <div class="div-solucion-a">
+                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
+                                </div>
+                                <div class="div-boton-solucion-a">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionSiete" [expanded]="step === 6"
+                (opened)="setStep(6)" [disabled]="!habilitarExpansionPanelPregeunta7">
+                <mat-expansion-panel-header fxLayout="row" fxLayoutAlign="space-between center">
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono7">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : a) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
+                                <div class="div-solucion-c">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                </div>
+                                <div class="div-boton-solucion-c">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+            <mat-expansion-panel *ngFor="let ejercicio of listEjercicioInterseccionOcho" [expanded]="step === 7"
+                (opened)="setStep(7)" [disabled]="!habilitarExpansionPanelPregeunta8">
+                <mat-expansion-panel-header>
+                    <div class="div-titulo-pregunta">
+                        <div style="display: flex;">
+                            <mat-panel-title class="panel-titulo">
+                                {{ejercicio.numeropregunta}}
+                            </mat-panel-title>
+                        </div>
+                        <div style="display: flex;">
+                            <mat-panel-description *ngIf="!mostrarIcono8">
+                                <mat-icon class="icon-check">check_circle_outline</mat-icon>
+                            </mat-panel-description>
+                        </div>
+                    </div>
+                </mat-expansion-panel-header>
+                <ng-template matExpansionPanelContent>
+                    <p>{{ejercicio.pregunta}}</p>
+                    <div class="div-principal-c-h">
+                        <div class="div-conjunto-c">
+                            <p>Conjunto C = {{ejercicio.conjuntoa}}</p>
+                        </div>
+                        <div class="div-conjunto-h">
+                            <p>Conjunto H = {{ejercicio.conjuntob}}</p>
+                        </div>
+                    </div>
+                    <mat-action-row style="padding: 0; margin: 0;">
+                        <mat-radio-group class="contenedor-radio-group-interseccion-1">
+                            <div class="div-radio-ab">
+                                <div class="div-radio-a">
+                                    <mat-radio-button [value]="ejercicio.respuestaa" (click)="respuestaA(ejercicio)"
+                                        class="radio-button">a) {{ejercicio.respuestaa}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-b">
+                                    <mat-radio-button [value]="ejercicio.respuestab" (click)="respuestaB(ejercicio)"
+                                        class="radio-button">b) {{ejercicio.respuestab}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div class="div-radio-cd">
+                                <div class="div-radio-c">
+                                    <mat-radio-button [value]="ejercicio.respuestac" (click)="respuestaC(ejercicio)"
+                                        class="radio-button">c) {{ejercicio.respuestac}}</mat-radio-button>
+                                </div>
+                                <div class="div-radio-d">
+                                    <mat-radio-button [value]="ejercicio.respuestad" (click)="respuestaD(ejercicio)"
+                                        class="radio-button">d) {{ejercicio.respuestad}}</mat-radio-button>
+                                </div>
+                            </div>
+                            <div *ngIf="!validarRespuesta" class="div-principal-respuesta-correcta">
+                                <div class="div-respuesta-correcta">
+                                    <p> La respuesta correcta es : c) {{respuestaCorrecta}} </p>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
+                                <div class="div-solucion-a">
+                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
+                                </div>
+                                <div class="div-boton-solucion-a">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
+                                <div class="div-solucion-b">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                </div>
+                                <div class="div-boton-solucion-b">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                            <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
+                                <div class="div-solucion-d">
+                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                </div>
+                                <div class="div-boton-solucion-d">
+                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                </div>
+                            </div>
+                        </mat-radio-group>
+                    </mat-action-row>
+                </ng-template>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>
+<app-footer></app-footer>
+<ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">
+    <p style="color: white">Cargando ejercicios ...</p>
+</ngx-spinner>
