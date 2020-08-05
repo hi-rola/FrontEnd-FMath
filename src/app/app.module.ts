@@ -61,6 +61,17 @@ import { MsjDiferenciaSimetricaN1FinalizadoComponent } from './components/estudi
 import { MsjEvaluacionN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/evaluacion-n1/msj-evaluacion-n1-finalizado/msj-evaluacion-n1-finalizado.component';
 import { MsjInterseccionN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/interseccion-n1/msj-interseccion-n1-finalizado/msj-interseccion-n1-finalizado.component';
 import { MsjUnionN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/union-n1/msj-union-n1-finalizado/msj-union-n1-finalizado.component';
+import { DiferenciaN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-n2/diferencia-n2.component';
+import { MsjDiferenciaN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-n2/msj-diferencia-n2-finalizado/msj-diferencia-n2-finalizado.component';
+import { DiferenciaSimetricaN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-simetrica-n2/diferencia-simetrica-n2.component';
+import { MsjDiferenciaSimetricaN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-simetrica-n2/msj-diferencia-simetrica-n2-finalizado/msj-diferencia-simetrica-n2-finalizado.component';
+import { EvaluacionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/evaluacion-n2/evaluacion-n2.component';
+import { MsjEvaluacionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/evaluacion-n2/msj-evaluacion-n2/msj-evaluacion-n2.component';
+import { MsjEvaluacionN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/evaluacion-n2/msj-evaluacion-n2-finalizado/msj-evaluacion-n2-finalizado.component';
+import { InterseccionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/interseccion-n2/interseccion-n2.component';
+import { MsjInterseccionN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/interseccion-n2/msj-interseccion-n2-finalizado/msj-interseccion-n2-finalizado.component';
+import { UnionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/union-n2/union-n2.component';
+import { MsjUnionN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/union-n2/msj-union-n2-finalizado/msj-union-n2-finalizado.component';
 
 
 @NgModule({
@@ -70,14 +81,16 @@ import { MsjUnionN1FinalizadoComponent } from './components/estudiante/conjuntos
     MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent, MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent,
     MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent, Error401Component, Error404Component, EncabezadoAcademicoComponent,
     EncabezadoEstudianteComponent, MenuComponent, AcercaDeComponent, MsjCerrarSesionComponent, PrincipalAcademicoComponent,
-    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent, AcademicosRegistradosComponent, 
-    EditarAcademicoComponent, PrincipalAdministrador1Component, PrincipalAdministrador2Component, RegistrarAcademicoComponent, 
-    PrincipalEstudianteComponent, IntroduccionConjuntosComponent, InformacionTeoriaElementalComponent, PrincipalConjuntos1Component, 
-    TeoriaDiferenciaComponent, TeoriaUnionComponent, TeoriaInterseccionComponent, TeoriaDiferenciaSimetricaComponent, 
-    PrincipalConjuntos2Component, EvaluacionN1Component, MsjEvaluacionN1Component, DiferenciaN1Component, 
-    DiferenciaSimetricaN1Component, InterseccionN1Component, UnionN1Component, MsjDiferenciaN1FinalizadoComponent, 
-    MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent, 
-    MsjUnionN1FinalizadoComponent, 
+    RegistrarEstudianteComponent, EstudiantesRegistradosComponent, EditarEstudianteComponent, AcademicosRegistradosComponent,
+    EditarAcademicoComponent, PrincipalAdministrador1Component, PrincipalAdministrador2Component, RegistrarAcademicoComponent,
+    PrincipalEstudianteComponent, IntroduccionConjuntosComponent, InformacionTeoriaElementalComponent, PrincipalConjuntos1Component,
+    TeoriaDiferenciaComponent, TeoriaUnionComponent, TeoriaInterseccionComponent, TeoriaDiferenciaSimetricaComponent,
+    PrincipalConjuntos2Component, EvaluacionN1Component, MsjEvaluacionN1Component, DiferenciaN1Component,
+    DiferenciaSimetricaN1Component, InterseccionN1Component, UnionN1Component, MsjDiferenciaN1FinalizadoComponent,
+    MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent,
+    MsjUnionN1FinalizadoComponent, DiferenciaN2Component, MsjDiferenciaN2FinalizadoComponent, DiferenciaSimetricaN2Component,
+    MsjDiferenciaSimetricaN2FinalizadoComponent, EvaluacionN2Component, MsjEvaluacionN2Component, MsjEvaluacionN2FinalizadoComponent,
+    InterseccionN2Component, MsjInterseccionN2FinalizadoComponent, UnionN2Component, MsjUnionN2FinalizadoComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
@@ -87,9 +100,10 @@ import { MsjUnionN1FinalizadoComponent } from './components/estudiante/conjuntos
     MsjAcademicoRegistradoComponent, MsjActualizarDatosComponent, MsjCambiarEstatusComponent, MsjCancelarRegistroComponent,
     MsjEliminarEstudianteComponent, MsjEstudianteActualizadoComponent, MsjEstudianteEliminadoComponent, MsjEstudianteExisteComponent,
     MsjEstudianteRegistradoComponent, MsjExisteAcademicoComponent, MsjRegistrarAcademicoComponent, MsjResgistrarEstudianteComponent,
-    MenuComponent, MsjCerrarSesionComponent, MsjEvaluacionN1Component, MsjDiferenciaN1FinalizadoComponent, 
+    MenuComponent, MsjCerrarSesionComponent, MsjEvaluacionN1Component, MsjDiferenciaN1FinalizadoComponent,
     MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent,
-    MsjUnionN1FinalizadoComponent
+    MsjUnionN1FinalizadoComponent, MsjDiferenciaN2FinalizadoComponent, MsjDiferenciaSimetricaN2FinalizadoComponent, MsjEvaluacionN2Component,
+    MsjEvaluacionN2FinalizadoComponent, MsjInterseccionN2FinalizadoComponent, MsjUnionN2FinalizadoComponent
 
   ],
   providers: [
