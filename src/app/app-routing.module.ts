@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+
 import { LoginComponent } from './components/login/login.component';
 import { PrincipalAcademicoComponent } from './components/academico/principal-academico/principal-academico.component';
 import { GuardiaAcademicoService } from './services/guardias/guardia-academico.service';
@@ -23,8 +24,7 @@ import { DiferenciaN1Component } from './components/estudiante/conjuntos1/ejerci
 import { TeoriaDiferenciaSimetricaComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-diferencia-simetrica/teoria-diferencia-simetrica.component';
 import { DiferenciaSimetricaN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-simetrica-n1/diferencia-simetrica-n1.component';
 import { InformacionTeoriaElementalComponent } from './components/estudiante/introduccion-conjuntos/informacion-teoria-elemental/informacion-teoria-elemental.component';
-
-
+import { EvaluacionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/evaluacion-n1/evaluacion-n1.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -46,6 +46,7 @@ const routes: Routes = [
   { path: 'home-estudiante/practicar-diferencia-1', component: DiferenciaN1Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/diferenica-simetrica', component: TeoriaDiferenciaSimetricaComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-diferencia-simetrica-1', component: DiferenciaSimetricaN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/evaluacion-1', component: EvaluacionN1Component, canActivate: [GuardiaEstudianteService]},
   { path: 'acerca-de', component: AcercaDeComponent },
   { path: '401', component: Error401Component },
   { path: '**', component: Error404Component}
