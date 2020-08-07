@@ -72,6 +72,7 @@ import { InterseccionN2Component } from './components/estudiante/conjuntos2/ejer
 import { MsjInterseccionN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/interseccion-n2/msj-interseccion-n2-finalizado/msj-interseccion-n2-finalizado.component';
 import { UnionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/union-n2/union-n2.component';
 import { MsjUnionN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/union-n2/msj-union-n2-finalizado/msj-union-n2-finalizado.component';
+import { Encabezado401Component } from './components/encabezados/encabezado401/encabezado401.component';
 
 
 @NgModule({
@@ -90,7 +91,7 @@ import { MsjUnionN2FinalizadoComponent } from './components/estudiante/conjuntos
     MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent,
     MsjUnionN1FinalizadoComponent, DiferenciaN2Component, MsjDiferenciaN2FinalizadoComponent, DiferenciaSimetricaN2Component,
     MsjDiferenciaSimetricaN2FinalizadoComponent, EvaluacionN2Component, MsjEvaluacionN2Component, MsjEvaluacionN2FinalizadoComponent,
-    InterseccionN2Component, MsjInterseccionN2FinalizadoComponent, UnionN2Component, MsjUnionN2FinalizadoComponent,
+    InterseccionN2Component, MsjInterseccionN2FinalizadoComponent, UnionN2Component, MsjUnionN2FinalizadoComponent, Encabezado401Component,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
