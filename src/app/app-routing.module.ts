@@ -25,6 +25,13 @@ import { TeoriaDiferenciaSimetricaComponent } from './components/estudiante/conj
 import { DiferenciaSimetricaN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/diferencia-simetrica-n1/diferencia-simetrica-n1.component';
 import { InformacionTeoriaElementalComponent } from './components/estudiante/introduccion-conjuntos/informacion-teoria-elemental/informacion-teoria-elemental.component';
 import { EvaluacionN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/evaluacion-n1/evaluacion-n1.component';
+import { ComplementoN1Component } from './components/estudiante/conjuntos1/ejercicios-nivel1/complemento-n1/complemento-n1.component';
+import { UnionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/union-n2/union-n2.component';
+import { InterseccionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/interseccion-n2/interseccion-n2.component';
+import { DiferenciaN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-n2/diferencia-n2.component';
+import { ComplementoN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/complemento-n2/complemento-n2.component';
+import { DiferenciaSimetricaN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-simetrica-n2/diferencia-simetrica-n2.component';
+import { EvaluacionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/evaluacion-n2/evaluacion-n2.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -40,13 +47,20 @@ const routes: Routes = [
   { path: 'home-estudiante/teoria-elemental-conjuntos', component: InformacionTeoriaElementalComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/union', component: TeoriaUnionComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-union-1', component: UnionN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-union-2', component: UnionN2Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/interseccion', component: TeoriaInterseccionComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-interseccion-1', component: InterseccionN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-interseccion-2', component: InterseccionN2Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/diferencia', component: TeoriaDiferenciaComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-diferencia-1', component: DiferenciaN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-diferencia-2', component: DiferenciaN2Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-complemento-1', component: ComplementoN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-complemento-2', component: ComplementoN2Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/diferenica-simetrica', component: TeoriaDiferenciaSimetricaComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-diferencia-simetrica-1', component: DiferenciaSimetricaN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/practicar-diferencia-simetrica-2', component: DiferenciaSimetricaN2Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/evaluacion-1', component: EvaluacionN1Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/evaluacion-2', component: EvaluacionN2Component, canActivate: [GuardiaEstudianteService]},
   { path: 'acerca-de', component: AcercaDeComponent },
   { path: '401', component: Error401Component },
   { path: '**', component: Error404Component}
