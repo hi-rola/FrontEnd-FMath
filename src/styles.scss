@@ -30,7 +30,8 @@ body {
 }
 
 .sesion,
-.home, .cerrar-sesion {
+.home,
+.cerrar-sesion {
   font-size: 14px;
   font-weight: normal;
 }
@@ -46,7 +47,8 @@ body {
 .msj-estudiante-registrado,
 .msj-estudiante-eliminado,
 .msj-estudiante-actualizado,
-.msj-academico-registrado {
+.msj-academico-registrado,
+.msj-estatus-actualizado {
   background: #43a047;
   color: white !important;
   max-height: 50px !important;
@@ -73,16 +75,14 @@ body {
   background: white !important;
 }
 
-.msj-nivel-finalizado
-.mat-dialog-container {
+.msj-nivel-finalizado .mat-dialog-container {
   overflow: hidden;
   border-radius: 4px;
   padding: 0;
   background: white !important;
 }
 
-.msj-evaluacion
-.mat-dialog-container {
+.msj-evaluacion .mat-dialog-container {
   overflow: hidden;
   border-radius: 4px;
   padding: 0;
