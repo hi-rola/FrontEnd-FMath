@@ -12,19 +12,16 @@ export class EncabezadoEstudianteComponent implements OnInit {
 
   showFiller = false;
   nombreEstudiante: string;
-  @Input() error = false;
   @Input() nombreUsuario = false;
 
   constructor(private dialog: MatDialog, private login: LoginService) { }
 
   ngOnInit() {
-    if (!this.error) {
       this.login.getEstudiante(this.login.getMatriculaToken()).subscribe(
         result => {
           this.nombreEstudiante = result.nombrecompleto;
         }
       );
-    }
   }
 
   abrirMenu() {

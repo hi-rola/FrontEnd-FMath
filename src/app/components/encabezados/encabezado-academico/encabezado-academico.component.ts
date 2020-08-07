@@ -1,5 +1,5 @@
 import { MatDialog } from '@angular/material';
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { LoginService } from './../../../services/login.service';
 import { MenuComponent } from '../menu/menu/menu.component';
 
@@ -14,17 +14,14 @@ export class EncabezadoAcademicoComponent implements OnInit {
   @Input() error = false;
   nombreAcademico: string;
 
-
   constructor(private dialog: MatDialog, private login: LoginService) { }
 
   ngOnInit() {
-    if (!this.error) {
-      this.login.getAcademico(this.login.getNumeropersonalToken()).subscribe(
-        result => {
-          this.nombreAcademico = result.nombrecompleto;
-        }
-      );
-    }
+    this.login.getAcademico(this.login.getNumeropersonalToken()).subscribe(
+      result => {
+        this.nombreAcademico = result.nombrecompleto;
+      }
+    );
   }
 
   abrirMenu() {
