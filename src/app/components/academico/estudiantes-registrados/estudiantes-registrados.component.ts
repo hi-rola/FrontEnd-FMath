@@ -24,6 +24,8 @@ export class EstudiantesRegistradosComponent implements OnInit {
   posicionVertical: MatSnackBarVerticalPosition = 'bottom';
   posicionHorizontal: MatSnackBarHorizontalPosition = 'left';
   tiempoSegundos = 10;
+  ocultarMensaje = true;
+
 
   displayedColumns: string[] = ['matricula', 'nombrecompleto', 'programaeducativo', 'seccion', 'bloque', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -33,18 +35,25 @@ export class EstudiantesRegistradosComponent implements OnInit {
     private login: LoginService, private admin: AdministradorService, private spinnerService: NgxSpinnerService) { }
 
   ngOnInit() {
-    this.realoadEstudiantes();
+    this.mostrarEstudiantes();
   }
 
-  realoadEstudiantes() {
+  mostrarEstudiantes() {
     this.spinnerService.show();
     this.admin.getEstudiantePorAcademico(this.login.getNumeropersonalToken()).subscribe(
       result => {
         this.estudiantes = result;
-        this.dataSource = new MatTableDataSource<Estudiante>(this.estudiantes);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        this.spinnerService.hide();
+        if(this.estudiantes.length === 0){
+          this.ocultarMensaje = false;
+          this.spinnerService.hide();
+        }else if(this.estudiantes.length > 0){
+          this.estudiantes = result;
+          this.dataSource = new MatTableDataSource<Estudiante>(this.estudiantes);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          this.ocultarMensaje = true;
+          this.spinnerService.hide();
+        }
       }
     );
   }
@@ -67,7 +76,7 @@ export class EstudiantesRegistradosComponent implements OnInit {
             result => {
               if (result) {
                 this.estudiantes = this.estudiantes.filter(borrarEstudiante => borrarEstudiante !== estudiante);
-                this.realoadEstudiantes();
+                this.mostrarEstudiantes();
                 this._snackBar.openFromComponent(MsjEstudianteEliminadoComponent, {
                   duration: this.tiempoSegundos * 400,
                   horizontalPosition: this.posicionHorizontal,

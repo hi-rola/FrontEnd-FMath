@@ -17,7 +17,7 @@ export class AcademicosRegistradosComponent implements OnInit {
 
   listAcademicos: Academico[];
   dataSource = null;
-
+  ocultarMensaje = true;
 
   displayedColumns: string[] = ['numeropersonal', 'nombrecompleto', 'correoinstitucional', 'estatus', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -27,7 +27,7 @@ export class AcademicosRegistradosComponent implements OnInit {
     private serviceAdmin: AdministradorService, private spinnerService: NgxSpinnerService) { }
 
   ngOnInit() {
-    this.realoadAcademicos();
+    this.mostrarAcademicos();
   }
 
   editarAcademico(academico: Academico) {
@@ -61,7 +61,7 @@ export class AcademicosRegistradosComponent implements OnInit {
           if (estatus == 'Activo' && estatus2 == true) {
             estatus = 'Inactivo'
             dat = !variebleEstatus1
-          } else if (estatus == 'Inactivo' && estatus2 == false){
+          } else if (estatus == 'Inactivo' && estatus2 == false) {
             estatus = 'Activo';
             dat = !!variebleEstatus2;
           }
@@ -70,26 +70,32 @@ export class AcademicosRegistradosComponent implements OnInit {
 
           this.serviceAdmin.actualizarAcademico(nuevoAc).subscribe(
             result => {
-              this.realoadAcademicos();
+              this.mostrarAcademicos();
             }
           );
         } else {
           this.dialog.closeAll();
-          this.realoadAcademicos();
+          this.mostrarAcademicos();
         }
       }
     );
   }
 
-  realoadAcademicos() {
+  mostrarAcademicos() {
     this.spinnerService.show();
     this.serviceAdmin.getTodosAcademicos().subscribe(
       result => {
         this.listAcademicos = result;
-        this.dataSource = new MatTableDataSource<Academico>(this.listAcademicos);
-        this.dataSource.paginator = this.paginator;
-        this.dataSource.sort = this.sort;
-        this.spinnerService.hide();
+        if (this.listAcademicos.length === 0) {
+          this.ocultarMensaje = false;
+          this.spinnerService.hide();
+        } else if (this.listAcademicos.length > 0) {
+          this.listAcademicos = result;
+          this.dataSource = new MatTableDataSource<Academico>(this.listAcademicos);
+          this.dataSource.paginator = this.paginator;
+          this.dataSource.sort = this.sort;
+          this.spinnerService.hide();
+        }
       }
     );
   }
