@@ -163,7 +163,6 @@ p {
 .div-radio-cd {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
   width: 100%;
 }
 
@@ -197,11 +196,11 @@ p {
   margin-left: 8px;
 }
 
-.respuesta{
+.respuesta {
   margin: 8px 8px;
 }
 
-.boton-ver-solucion{
+.boton-ver-solucion {
   margin: 0 !important;
   margin-bottom: 5px !important;
 }
@@ -279,7 +278,6 @@ input::placeholder {
   font-size: 16px;
 }
 
-
 @media screen and (max-width: 760px) {
   .div-radio-ab {
     flex-direction: column;
@@ -301,10 +299,17 @@ input::placeholder {
     flex-direction: column;
   }
 
+  .div-radio-a,
+  .div-radio-b,
+  .div-radio-c,
+  .div-radio-d {
+    width: 100%;
+  }
+
   .div-conjunto-a2,
   .div-conjunto-b2,
   .div-conjunto-c2,
-  .div-conjunto-d2{
+  .div-conjunto-d2 {
     width: 100%;
   }
 
