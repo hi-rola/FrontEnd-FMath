@@ -128,7 +128,7 @@ export class UnionN1Component implements OnInit {
         this.solucionRespuestaC = true; // Ocultar solucion respuesta C
         this.solucionRespuestaD = true; // Ocultar solucion respuesta D
 
-        let tipo = 'Unión 1';
+        let tipo = 'Union-1';
         let puntos = 10;
         let matricula = this.getMatricula();
 
