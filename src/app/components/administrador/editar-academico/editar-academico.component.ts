@@ -40,6 +40,7 @@ export class EditarAcademicoComponent implements OnInit {
         this.academicoForm.get('contrasena').setValue(result.contrasena);
         this.academicoForm.get('correoInstitucional').setValue(result.correoinstitucional);
         this.academicoForm.get('periodoEscolar').setValue(result.periodoescolar);
+        this.academicoForm.get('rol').setValue(result.rol);
       }
     );
   }
@@ -53,7 +54,7 @@ export class EditarAcademicoComponent implements OnInit {
       periodoEscolar: new FormControl('', Validators.required),
       contrasena: new FormControl('', [Validators.required, Validators.minLength(6)]),
       estatus: new FormControl(''),
-      rol: new FormControl(''),
+      rol: new FormControl('', Validators.required),
       estatus2: new FormControl('')
     });
   }
