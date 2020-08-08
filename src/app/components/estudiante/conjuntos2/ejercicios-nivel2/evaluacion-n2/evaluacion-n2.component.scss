@@ -163,7 +163,6 @@ p {
 .div-radio-cd {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
   width: 100%;
 }
 
@@ -181,8 +180,9 @@ p {
 
 .div-principal-respuesta-correcta {
   display: flex;
+  align-items: center;
   width: 100%;
-  height: auto;
+  height: 70px;
   background: #43a047;
   color: white;
   border-radius: 0.3em;
@@ -196,14 +196,23 @@ p {
   margin-left: 8px;
 }
 
+.respuesta {
+  margin: 8px 8px;
+}
+
+.boton-ver-solucion {
+  margin: 0 !important;
+  margin-bottom: 5px !important;
+}
+
 .div-principal-solucion-a,
 .div-principal-solucion-b,
 .div-principal-solucion-c,
 .div-principal-solucion-d {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  justify-content: center;
   width: 100%;
-  height: 60px;
+  height: auto;
   margin-top: 20px !important;
   background: #cb4335;
   border-radius: 0.3em;
@@ -216,10 +225,9 @@ p {
 .div-solucion-c,
 .div-solucion-d {
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  width: 100%;
   align-items: center;
-  width: 85%;
-  margin-left: 8px;
 }
 
 .div-boton-solucion-a,
@@ -227,8 +235,8 @@ p {
 .div-boton-solucion-c,
 .div-boton-solucion-d {
   display: flex;
-  justify-content: right;
-  width: 15%;
+  justify-content: center;
+  width: 100%;
 }
 
 .div-principal-respuesta-a,
@@ -268,4 +276,68 @@ p {
 
 input::placeholder {
   font-size: 16px;
+}
+
+@media screen and (max-width: 760px) {
+  .div-radio-ab {
+    flex-direction: column;
+  }
+
+  .div-principal-a-b {
+    flex-direction: column;
+  }
+
+  .div-radio-a,
+  .div-radio-b,
+  .div-radio-c,
+  .div-radio-d{
+    width: 100%;
+  }
+
+  .div-conjunto-a {
+    width: 100%;
+  }
+
+  .div-conjunto-b {
+    width: 100%;
+  }
+
+  .div-radio-cd {
+    flex-direction: column;
+  }
+
+  .div-conjunto-a2,
+  .div-conjunto-b2,
+  .div-conjunto-c2,
+  .div-conjunto-d2 {
+    width: 100%;
+  }
+
+  .div-principal-solucion-a,
+  .div-principal-solucion-b,
+  .div-principal-solucion-c,
+  .div-principal-solucion-d {
+    display: block;
+    justify-content: center;
+    height: auto;
+  }
+
+  .icono-volver-complemento-1 {
+    margin-left: 10px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .card-conjuntos-evaluacion-2 {
+    width: 90%;
+    margin-bottom: 90px;
+  }
+
+  .card-content-evaluacion-2 {
+    width: 100% !important;
+  }
+
+  .icono-volver-evaluacion-2 {
+    margin-left: 10px;
+  }
 }
