@@ -163,7 +163,6 @@ p {
 .div-radio-cd {
   display: flex;
   flex-direction: row;
-  margin-top: 10px;
   width: 100%;
 }
 
@@ -295,10 +294,25 @@ input::placeholder {
 
   .div-conjunto-b {
     width: 100%;
+    justify-content: left;
+  }
+
+  .div-conjunto-a2,
+  .div-conjunto-b2,
+  .div-conjunto-c2,
+  .div-conjunto-d2{
+    width: 100%;
   }
 
   .div-radio-cd {
     flex-direction: column;
+  }
+
+  .div-radio-a,
+  .div-radio-b,
+  .div-radio-c,
+  .div-radio-d {
+    width: 100%;
   }
 
   .div-principal-solucion-a,
