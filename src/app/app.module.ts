@@ -111,7 +111,8 @@ import { MsjEstatusActualizadoComponent } from './components/mensajes-de-confirm
     MenuComponent, MsjCerrarSesionComponent, MsjEvaluacionN1Component, MsjDiferenciaN1FinalizadoComponent,
     MsjDiferenciaSimetricaN1FinalizadoComponent, MsjEvaluacionN1FinalizadoComponent, MsjInterseccionN1FinalizadoComponent,
     MsjUnionN1FinalizadoComponent, MsjDiferenciaN2FinalizadoComponent, MsjDiferenciaSimetricaN2FinalizadoComponent, MsjEvaluacionN2Component,
-    MsjEvaluacionN2FinalizadoComponent, MsjInterseccionN2FinalizadoComponent, MsjUnionN2FinalizadoComponent, MsjEstatusActualizadoComponent
+    MsjEvaluacionN2FinalizadoComponent, MsjInterseccionN2FinalizadoComponent, MsjUnionN2FinalizadoComponent, MsjEstatusActualizadoComponent,
+    MsjComplementoN1FinalizadoComponent, MsjComplementoN2FinalizadoComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: InterceptorhttpService, multi: true }
