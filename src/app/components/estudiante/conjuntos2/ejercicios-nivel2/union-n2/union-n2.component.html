@@ -81,7 +81,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaA" class="div-principal-respuesta-a">
                                 <div class="div-solucion-respuesta-a">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-a">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -90,7 +90,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-respuesta-b">
                                 <div class="div-solucion-respuesta-b">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-a">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -99,7 +99,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-respuesta-c">
                                 <div class="div-solucion-respuesta-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-c">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -108,7 +108,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-respuesta-d">
                                 <div class="div-solucion-respuesta-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-d">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -174,26 +174,26 @@
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
                                 <div class="div-solucion-b">
-                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-solucion-b">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
                                 <div class="div-solucion-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-solucion-c">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
                                 <div class="div-solucion-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-solucion-d">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                         </mat-radio-group>
@@ -258,26 +258,26 @@
                             </div>
                             <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
                                 <div class="div-solucion-a">
-                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
                                 </div>
                                 <div class="div-boton-solucion-a">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
                                 <div class="div-solucion-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-solucion-c">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
                                 <div class="div-solucion-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-solucion-d">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                         </mat-radio-group>
@@ -350,7 +350,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaA" class="div-principal-respuesta-a">
                                 <div class="div-solucion-respuesta-a">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-a">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -359,7 +359,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-respuesta-b">
                                 <div class="div-solucion-respuesta-b">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-a">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -368,7 +368,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-respuesta-c">
                                 <div class="div-solucion-respuesta-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-c">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -377,7 +377,7 @@
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-respuesta-d">
                                 <div class="div-solucion-respuesta-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-respuesta-d">
                                     <button mat-stroked-button (click)="mostrarIngresarRespuesta(ejercicio)">Ingresar
@@ -443,26 +443,26 @@
                             </div>
                             <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
                                 <div class="div-solucion-a">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestaa}} </p>
                                 </div>
                                 <div class="div-boton-solucion-a">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
                                 <div class="div-solucion-b">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-solucion-b">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
                                 <div class="div-solucion-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-solucion-c">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                         </mat-radio-group>
@@ -527,26 +527,26 @@
                             </div>
                             <div *ngIf="!solucionRespuestaA" class="div-principal-solucion-a">
                                 <div class="div-solucion-a">
-                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta:{{ejercicio.solucionrespuestaa}} </p>
                                 </div>
                                 <div class="div-boton-solucion-a">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
                                 <div class="div-solucion-b">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-solucion-b">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
                                 <div class="div-solucion-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-solucion-d">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                         </mat-radio-group>
@@ -608,26 +608,26 @@
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
                                 <div class="div-solucion-b">
-                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-solucion-b">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
                                 <div class="div-solucion-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-solucion-c">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
                                 <div class="div-solucion-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-solucion-d">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                         </mat-radio-group>
@@ -689,26 +689,26 @@
                             </div>
                             <div *ngIf="!solucionRespuestaB" class="div-principal-solucion-b">
                                 <div class="div-solucion-b">
-                                    <p> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta:{{ejercicio.solucionrespuestab}} </p>
                                 </div>
                                 <div class="div-boton-solucion-b">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaC" class="div-principal-solucion-c">
                                 <div class="div-solucion-c">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestac}} </p>
                                 </div>
                                 <div class="div-boton-solucion-c">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                             <div *ngIf="!solucionRespuestaD" class="div-principal-solucion-d">
                                 <div class="div-solucion-d">
-                                    <p> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
+                                    <p class="respuesta"> Respuesta incorrecta: {{ejercicio.solucionrespuestad}} </p>
                                 </div>
                                 <div class="div-boton-solucion-d">
-                                    <button mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
+                                    <button class="boton-ver-solucion" mat-button (click)="verSolucion(ejercicio)">Ver solución</button>
                                 </div>
                             </div>
                         </mat-radio-group>
@@ -718,6 +718,7 @@
         </mat-accordion>
     </mat-card-content>
 </mat-card>
+<app-footer></app-footer>
 <ngx-spinner bdColor="rgba(51, 51, 51, 0.8)" size="medium" type="ball-spin-clockwise">
     <p style="color: white">Cargando ejercicios ...</p>
 </ngx-spinner>
