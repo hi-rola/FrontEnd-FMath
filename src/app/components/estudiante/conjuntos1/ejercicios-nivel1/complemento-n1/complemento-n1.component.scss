@@ -175,8 +175,9 @@ p {
 
 .div-principal-respuesta-correcta {
   display: flex;
+  align-items: center;
   width: 100%;
-  height: 50px;
+  height: 70px;
   background: #43a047;
   color: white;
   border-radius: 0.3em;
@@ -190,14 +191,23 @@ p {
   margin-left: 8px;
 }
 
+.respuesta{
+  margin: 8px 8px;
+}
+
+.boton-ver-solucion{
+  margin: 0 !important;
+  margin-bottom: 5px !important;
+}
+
 .div-principal-solucion-a,
 .div-principal-solucion-b,
 .div-principal-solucion-c,
 .div-principal-solucion-d {
-  display: flex;
-  flex-direction: row;
+  display: block;
+  justify-content: center;
   width: 100%;
-  height: 60px;
+  height: auto;
   margin-top: 20px !important;
   background: #cb4335;
   border-radius: 0.3em;
@@ -210,10 +220,9 @@ p {
 .div-solucion-c,
 .div-solucion-d {
   display: flex;
-  justify-content: left;
+  justify-content: center;
+  width: 100%;
   align-items: center;
-  width: 85%;
-  margin-left: 8px;
 }
 
 .div-boton-solucion-a,
@@ -221,8 +230,8 @@ p {
 .div-boton-solucion-c,
 .div-boton-solucion-d {
   display: flex;
-  justify-content: right;
-  width: 15%;
+  justify-content: center;
+  width: 100%;
 }
 
 @media screen and (max-width: 760px) {
@@ -250,15 +259,9 @@ p {
   .div-principal-solucion-b,
   .div-principal-solucion-c,
   .div-principal-solucion-d {
-    margin: 0;
-    flex-direction: column;
-    height: 110px;
+    display: block;
     justify-content: center;
-  }
-
-  .div-solucion-b,
-  .div-solucion-d {
-    margin: 0;
+    height: auto;
   }
 
   .icono-volver-complemento-1 {
