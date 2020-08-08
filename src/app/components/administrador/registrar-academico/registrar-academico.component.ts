@@ -42,7 +42,7 @@ export class RegistrarAcademicoComponent implements OnInit {
       periodoEscolar: new FormControl('', Validators.required),
       contrasena: new FormControl('', [Validators.required, Validators.minLength(6)]),
       estatus: new FormControl(''),
-      rol: new FormControl(''),
+      rol: new FormControl('', Validators.required),
       estatus2: new FormControl('')
     });
   }
@@ -61,7 +61,6 @@ export class RegistrarAcademicoComponent implements OnInit {
           if (result && loader) {
             this.spinnerService.show();
             this.academicoForm.get('estatus').setValue('Activo');
-            this.academicoForm.get('rol').setValue('Academico');
             const variableEstatus2 = 'true';
             let variable: boolean;
             variable = !!variableEstatus2;
@@ -74,7 +73,7 @@ export class RegistrarAcademicoComponent implements OnInit {
               this.academicoForm.get('periodoEscolar').value,
               this.academicoForm.get('contrasena').value,
               this.academicoForm.get('estatus').value,
-              this.academicoForm.get('rol').value,
+              this.academicoForm.get('rol').value, /// verficar si inserta tipo de usuario
               variable
             );
 

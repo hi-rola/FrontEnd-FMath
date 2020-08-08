@@ -80,6 +80,18 @@
                     </mat-error>
                 </mat-error>
             </mat-form-field>
+            <mat-form-field class="mat-form">
+                <mat-select placeholder="Tipo usuario" formControlName='rol'>
+                  <mat-option value="Academico">Academico</mat-option>
+                  <mat-option value="Academico-Administrador">Academico-Administrador</mat-option>
+                </mat-select>
+                <mat-error *ngIf="academicoForm.controls['rol'].touched || !academicoForm.controls['rol'].valid 
+                || academicoForm.controls['rol'].dirty">
+                  <mat-error id="errorInput" *ngIf="academicoForm.controls['rol'].hasError('required')">
+                    Falta colocar el tipo de usuario
+                  </mat-error>
+                </mat-error>
+              </mat-form-field>
         </mat-card-content>
         <mat-card-actions class="card-action">
             <button mat-stroked-button id="boton-guardar" class="mat-elevation-z3" (click)="registrarAcademico()">
