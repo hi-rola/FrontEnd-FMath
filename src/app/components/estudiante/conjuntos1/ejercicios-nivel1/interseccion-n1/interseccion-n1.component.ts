@@ -247,7 +247,7 @@ export class InterseccionN1Component implements OnInit {
         this.solucionRespuestaB = true; // Ocultar solucion respuesta C
         this.solucionRespuestaD = true; // Ocultar solucion respuesta D
 
-        let tipo = 'Intersección 1';
+        let tipo = 'Interseccion-1';
         let puntos = 10;
         let matricula = this.getMatricula();
 

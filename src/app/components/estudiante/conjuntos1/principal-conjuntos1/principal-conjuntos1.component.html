@@ -102,6 +102,32 @@
             <mat-card-header class="card-header" fxLayout="column" fxLayoutAlign="center center">
                 <div class="contenedor-titulo-icono">
                     <div class="contenedor-titulo">
+                        Complemento
+                    </div>
+                    <div *ngIf="!mostrarCheckComplemento" class="contenedor-icono">
+                        <mat-icon>check</mat-icon>
+                    </div>
+                </div>
+            </mat-card-header>
+            <mat-card-content class="content-1" fxLayout="column" fxLayoutAlign="center center">
+                <img src="assets/img/diferencia-simetrica.png" style="height: 91px;">
+            </mat-card-content>
+            <mat-card-actions fxLayout="column" fxLayoutAlign="center center">
+                <button class="buton-leer-mas" routerLink="/home-estudiante/diferenica-simetrica" mat-button>Leer
+                    más</button>
+                <button *ngIf="!practicarComplemento" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-complemento-1" mat-button>Practicar</button>
+                <button *ngIf="!practicarDeNuevoComplemento" class="buton-practicar"
+                    routerLink="/home-estudiante/practicar-complemento-1" mat-button>Practicar de
+                    nuevo</button>
+            </mat-card-actions>
+        </mat-card>
+    </div>
+    <div class="div-caja">
+        <mat-card class="mat-elevation-z3 contenido-card">
+            <mat-card-header class="card-header" fxLayout="column" fxLayoutAlign="center center">
+                <div class="contenedor-titulo-icono">
+                    <div class="contenedor-titulo">
                         Evaluación
                     </div>
                     <div *ngIf="!mostrarCheckEvaluacion" class="contenedor-icono">

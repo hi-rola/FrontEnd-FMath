@@ -20,16 +20,20 @@ export class PrincipalConjuntos1Component implements OnInit {
   practicarDiferencia = false;
   practicarDiferenciaS = false;
   practicarEvaluacion = false;
+  practicarComplemento = false;
   mostrarCheckUnion = true;
   mostrarCheckEvaluacion = true;
   mostrarCheckDiferencia = true;
   mostrarCheckInterseccion = true;
   mostrarCheckDiferenciaS = true;
+  mostrarCheckComplemento = true;
   practicarDeNuevoUnion = true;
   practicarDeNuevoDiferencia = true;
   practicarDeNuevoDiferenciaS = true;
   practicarDeNuevoInterseccion = true;
   practicarDeNuevoEvaluacion = true;
+  practicarDeNuevoComplemento = true;
+
   listPuntaje: Puntajeestudiante[] = [];
 
   constructor(private route: Router, public dialog: MatDialog, private puntajeEstudianteService: PuntajeestudianteService,
@@ -41,6 +45,7 @@ export class PrincipalConjuntos1Component implements OnInit {
     this.getPuntajeDiferencia();
     this.getPuntajeDiferenciaSimetrica();
     this.getPuntajeEvaluacion();
+    this.getPuntajeComplemento();
   }
 
   getPuntajeUnion() {
@@ -48,12 +53,12 @@ export class PrincipalConjuntos1Component implements OnInit {
     this.puntajeEstudianteService.getPuntaje(matricula).subscribe(
       result => {
         this.listPuntaje = result;
-        const listPuntajeEstudiante = this.listPuntaje.find(elemento => elemento.tipoejercicio == 'Unión 1');
+        const listPuntajeEstudiante = this.listPuntaje.find(elemento => elemento.tipoejercicio == 'Union-1');
         if (listPuntajeEstudiante == undefined) {
           this.mostrarCheckUnion = true;
           this.practicarDeNuevoUnion = true;
           this.practicarUnion = false;
-        } else if (listPuntajeEstudiante != undefined && listPuntajeEstudiante.tipoejercicio == 'Unión 1' && listPuntajeEstudiante.puntaje == 10) {
+        } else if (listPuntajeEstudiante != undefined && listPuntajeEstudiante.tipoejercicio == 'Union-1' && listPuntajeEstudiante.puntaje == 10) {
           this.mostrarCheckUnion = false;
           this.practicarDeNuevoUnion = false;
           this.practicarUnion = true;
@@ -67,12 +72,12 @@ export class PrincipalConjuntos1Component implements OnInit {
     this.puntajeEstudianteService.getPuntaje(matricula).subscribe(
       result => {
         this.listPuntaje = result;
-        const listInterseccion = this.listPuntaje.find(data => data.tipoejercicio == 'Intersección 1');
+        const listInterseccion = this.listPuntaje.find(data => data.tipoejercicio == 'Interseccion-1');
         if (listInterseccion == undefined) {
           this.mostrarCheckInterseccion = true;
           this.practicarDeNuevoInterseccion = true;
           this.practicarInterseccion = false;
-        } else if (listInterseccion != undefined && listInterseccion.tipoejercicio == 'Intersección 1' && listInterseccion.puntaje == 10) {
+        } else if (listInterseccion != undefined && listInterseccion.tipoejercicio == 'Interseccion-1' && listInterseccion.puntaje == 10) {
           this.mostrarCheckInterseccion = false;
           this.practicarDeNuevoInterseccion = false;
           this.practicarInterseccion = true;
@@ -86,12 +91,12 @@ export class PrincipalConjuntos1Component implements OnInit {
     this.puntajeEstudianteService.getPuntaje(matricula).subscribe(
       result => {
         this.listPuntaje = result;
-        const listDiferencia = this.listPuntaje.find(data => data.tipoejercicio == 'Diferencia 1');
+        const listDiferencia = this.listPuntaje.find(data => data.tipoejercicio == 'Diferencia-1');
         if (listDiferencia == undefined) {
           this.mostrarCheckDiferencia = true;
           this.practicarDeNuevoDiferencia = true;
           this.practicarDiferencia = false;
-        } else if (listDiferencia != undefined && listDiferencia.tipoejercicio == 'Diferencia 1' && listDiferencia.puntaje == 10) {
+        } else if (listDiferencia != undefined && listDiferencia.tipoejercicio == 'Diferencia-1' && listDiferencia.puntaje == 10) {
           this.mostrarCheckDiferencia = false;
           this.practicarDeNuevoDiferencia = false;
           this.practicarDiferencia = true;
@@ -119,18 +124,38 @@ export class PrincipalConjuntos1Component implements OnInit {
     );
   }
 
+  getPuntajeComplemento() {
+    let matricula = this.getMatricula();
+    this.puntajeEstudianteService.getPuntaje(matricula).subscribe(
+      result => {
+        this.listPuntaje = result;
+        const listDiferenciaS = this.listPuntaje.find(data => data.tipoejercicio == 'Complemento-1');
+        if (listDiferenciaS == undefined) {
+          this.mostrarCheckComplemento = true;
+          this.practicarDeNuevoComplemento = true;
+          this.practicarComplemento = false;
+        } else if (listDiferenciaS != undefined && listDiferenciaS.tipoejercicio == 'Complemento-1' && listDiferenciaS.puntaje == 10) {
+          this.mostrarCheckComplemento = false;
+          this.practicarDeNuevoComplemento = false;
+          this.practicarComplemento = true;
+        }
+      }
+    );
+  }
+
   getPuntajeEvaluacion() {
     let matricula = this.getMatricula();
     this.puntajeEstudianteService.getPuntaje(matricula).subscribe(
       result => {
         this.listPuntaje = result;
-        const listPuntajeUnion = this.listPuntaje.find(elemento => elemento.tipoejercicio == 'Unión 1');
-        const listInterseccion = this.listPuntaje.find(data => data.tipoejercicio == 'Intersección 1');
-        const listDiferencia = this.listPuntaje.find(data => data.tipoejercicio == 'Diferencia 1');
+        const listPuntajeUnion = this.listPuntaje.find(elemento => elemento.tipoejercicio == 'Union-1');
+        const listInterseccion = this.listPuntaje.find(data => data.tipoejercicio == 'Interseccion-1');
+        const listComplemento = this.listPuntaje.find(data => data.tipoejercicio == 'Complemento-1');
+        const listDiferencia = this.listPuntaje.find(data => data.tipoejercicio == 'Diferencia-1');
         const listDiferenciaS = this.listPuntaje.find(data => data.tipoejercicio == 'DS-1');
         const listEvaluacion = this.listPuntaje.find(data => data.tipoejercicio == 'E-1');
         if (listPuntajeUnion != undefined && listInterseccion != undefined && listDiferenciaS != undefined
-          && listDiferencia != undefined && listEvaluacion != undefined) {
+          && listDiferencia != undefined && listEvaluacion != undefined && listComplemento != undefined) {
           this.mostrarCheckEvaluacion = false;
           this.practicarDeNuevoEvaluacion = false;
           this.practicarEvaluacion = true;
@@ -148,12 +173,13 @@ export class PrincipalConjuntos1Component implements OnInit {
     this.puntajeEstudianteService.getPuntaje(matricula).subscribe(
       result => {
         this.listPuntaje = result;
-        const listPuntajeUnion = this.listPuntaje.find(elemento => elemento.tipoejercicio == 'Unión 1');
-        const listInterseccion = this.listPuntaje.find(data => data.tipoejercicio == 'Intersección 1');
-        const listDiferencia = this.listPuntaje.find(data => data.tipoejercicio == 'Diferencia 1');
+        const listPuntajeUnion = this.listPuntaje.find(elemento => elemento.tipoejercicio == 'Union-1');
+        const listInterseccion = this.listPuntaje.find(data => data.tipoejercicio == 'Interseccion-1');
+        const listDiferencia = this.listPuntaje.find(data => data.tipoejercicio == 'Diferencia-1');
         const listDiferenciaS = this.listPuntaje.find(data => data.tipoejercicio == 'DS-1');
+        const listComplemento = this.listPuntaje.find(data => data.tipoejercicio == 'Complemento-1');
         if (listPuntajeUnion != undefined && listInterseccion != undefined && listDiferenciaS != undefined
-          && listDiferencia != undefined) {
+          && listDiferencia != undefined && listComplemento != undefined) {
           this.route.navigate(['/home-estudiante/evaluacion-1']);
 
         } else {
