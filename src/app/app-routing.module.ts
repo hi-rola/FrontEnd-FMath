@@ -33,6 +33,7 @@ import { ComplementoN2Component } from './components/estudiante/conjuntos2/ejerc
 import { DiferenciaSimetricaN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-simetrica-n2/diferencia-simetrica-n2.component';
 import { EvaluacionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/evaluacion-n2/evaluacion-n2.component';
 import { TeoriaComplementoComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-complemento/teoria-complemento.component';
+import { GuardiaAdministradorService } from './services/guardias/guardia-administrador.service';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -40,10 +41,10 @@ const routes: Routes = [
   { path: 'home-academico', component: PrincipalAcademicoComponent, canActivate: [GuardiaAcademicoService]},
   { path: 'home-academico/actualizar-inf-estudiante/:id', component: EditarEstudianteComponent, canActivate: [GuardiaAcademicoService]},
   { path: 'registrar-estudiante', component: RegistrarEstudianteComponent, canActivate: [GuardiaAcademicoService]},
-  { path: 'registrar-academico', component: RegistrarAcademicoComponent },
-  { path: 'academicos-registrados', component: PrincipalAdministrador2Component },
-  { path: 'actualizar-informacion-academico/:id', component: EditarAcademicoComponent },
-  { path: 'home-administrador', component: PrincipalAdministrador1Component },
+  { path: 'registrar-academico', component: RegistrarAcademicoComponent, canActivate: [GuardiaAdministradorService]},
+  { path: 'academicos-registrados', component: PrincipalAdministrador2Component, canActivate: [GuardiaAdministradorService]},
+  { path: 'actualizar-informacion-academico/:id', component: EditarAcademicoComponent, canActivate: [GuardiaAdministradorService]},
+  { path: 'home-administrador', component: PrincipalAdministrador1Component, canActivate: [GuardiaAdministradorService]},
   { path: 'home-estudiante', component: PrincipalEstudianteComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/teoria-elemental-conjuntos', component: InformacionTeoriaElementalComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/union', component: TeoriaUnionComponent, canActivate: [GuardiaEstudianteService]},
