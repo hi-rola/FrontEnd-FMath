@@ -35,6 +35,13 @@ export class MenuComponent implements OnInit {
           this.correoUsuario = result.correoinstitucional;
         }
       );
+    } else if (validarUsuario === 'd') {
+      this.login.getAcademico(this.login.getNumeropersonalToken()).subscribe(
+        result => {
+          this.nombreUsuario = result.nombrecompleto;
+          this.correoUsuario = result.correoinstitucional;
+        }
+      );
     }
   }
 
