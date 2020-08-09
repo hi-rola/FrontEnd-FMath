@@ -127,7 +127,6 @@ export class RegistrarAcademicoComponent implements OnInit {
   }
 
   volverInicio() {
-    /*
     if (this.academicoForm.get('numeroPersonal').value !== undefined && this.academicoForm.get('numeroPersonal').value !== ''
       || this.academicoForm.get('nombreCompleto').value !== undefined && this.academicoForm.get('nombreCompleto').value !== ''
       || this.academicoForm.get('usuario').value !== undefined && this.academicoForm.get('usuario').value !== ''
@@ -140,12 +139,6 @@ export class RegistrarAcademicoComponent implements OnInit {
       });
     } else {
       this.router.navigate(['/academicos-registrados']);
-    }*/
-
-    const tipoUsuario = this.getTipoUsuario();
-    console.log('tipo :' + tipoUsuario)
-    if(tipoUsuario === 'a'){
-      this.router.navigate(['/home-academico']);
     }
   }
 
