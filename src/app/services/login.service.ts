@@ -41,4 +41,10 @@ export class LoginService {
   getAcademico(usuario: string): Observable<any> {
     return this.http.get(this.urlBackEnd + '/academicos/' + usuario);
   }
+
+  getTipoUsuario(): string {
+    const cadena = localStorage.getItem('FMathTk');
+    const tipoUsuario = cadena.charAt(0);
+    return tipoUsuario;
+  }
 }
