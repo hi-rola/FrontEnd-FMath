@@ -95,7 +95,6 @@ export class AcademicosRegistradosComponent implements OnInit {
     this.spinnerService.show();
     this.serviceAdmin.getTodosAcademicos().subscribe(
       result => {
-        console.log('entro 1');
         this.listAcademicos = result;
         if (this.listAcademicos.length === 0) {
           this.ocultarMensaje = false;
@@ -103,9 +102,15 @@ export class AcademicosRegistradosComponent implements OnInit {
           this.spinnerService.hide();
         } else if (this.listAcademicos.length > 0) {
           this.listAcademicos = result;
+          console.log(this.listAcademicos)
           this.dataSource = new MatTableDataSource<Academico>(this.listAcademicos);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.dataSource.paginator._intl.itemsPerPageLabel = "Usuarios por página";
+          this.dataSource.paginator._intl.nextPageLabel = "Siguiente";
+          this.dataSource.paginator._intl.previousPageLabel = "Anterior";
+          this.dataSource.paginator._intl.firstPageLabel = "Inicio";
+          this.dataSource.paginator._intl.lastPageLabel = "Última página";
           this.spinnerService.hide();
         }
       }
