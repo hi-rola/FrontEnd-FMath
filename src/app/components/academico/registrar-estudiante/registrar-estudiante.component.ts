@@ -10,6 +10,7 @@ import { EstudianteNumeropersonal } from 'src/app/models/EstudianteNumeropersona
 import { MsjEstudianteExisteComponent } from '../../mensajes-de-confirmacion/msj-estudiante-existe/msj-estudiante-existe.component';
 import { MsjEstudianteRegistradoComponent } from '../../mensajes-de-confirmacion/msj-estudiante-registrado/msj-estudiante-registrado.component';
 import { MsjCancelarRegistroComponent } from '../../mensajes-de-confirmacion/msj-cancelar-registro/msj-cancelar-registro.component';
+import { LoginService } from 'src/app/services/login.service';
 
 @Component({
   selector: 'app-registrar-estudiante',
@@ -27,7 +28,7 @@ export class RegistrarEstudianteComponent implements OnInit {
   mostrarLoader = false;
 
   constructor(public dialog: MatDialog, private _snackBar: MatSnackBar, private router: Router, private servicioAC: AcademicoService,
-    private spinnerService: NgxSpinnerService) {
+    private spinnerService: NgxSpinnerService, private loginService: LoginService) {
     this.alumnoForm = this.createAlumnoForm();
   }
 
@@ -128,6 +129,7 @@ export class RegistrarEstudianteComponent implements OnInit {
   }
 
   volverInicio() {
+    const tipoUsuario =  this.getTipoUsuario();
     if (this.alumnoForm.get('matricula').value !== undefined && this.alumnoForm.get('matricula').value !== '' ||
       this.alumnoForm.get('nombre').value !== undefined && this.alumnoForm.get('nombre').value !== '' ||
       this.alumnoForm.get('contrasena').value !== undefined && this.alumnoForm.get('contrasena').value !== '' ||
@@ -138,8 +140,15 @@ export class RegistrarEstudianteComponent implements OnInit {
         panelClass: 'msj-registrar-estudiante',
         autoFocus: false
       });
-    } else {
+    } else if(tipoUsuario === 'd'){
       this.router.navigate(['/home-administrador']);
+    } else if(tipoUsuario === 'a'){
+      this.router.navigate(['/home-academico']);
     }
+  }
+
+  getTipoUsuario(): string {
+    const tipoUsuario = this.loginService.getTipoUsuario();
+    return tipoUsuario;
   }
 }
