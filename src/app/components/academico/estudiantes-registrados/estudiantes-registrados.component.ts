@@ -27,7 +27,7 @@ export class EstudiantesRegistradosComponent implements OnInit {
   ocultarMensaje = true;
 
 
-  displayedColumns: string[] = ['matricula', 'nombrecompleto', 'programaeducativo', 'seccion', 'bloque', 'actions'];
+  displayedColumns: string[] = ['matricula', 'nombrecompleto', 'programaeducativo', 'seccion', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) sort: MatSort;
 
@@ -51,6 +51,11 @@ export class EstudiantesRegistradosComponent implements OnInit {
           this.dataSource = new MatTableDataSource<Estudiante>(this.estudiantes);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
+          this.dataSource.paginator._intl.itemsPerPageLabel = "Usuarios por página";
+          this.dataSource.paginator._intl.nextPageLabel = "Siguiente";
+          this.dataSource.paginator._intl.previousPageLabel = "Anterior";
+          this.dataSource.paginator._intl.firstPageLabel = "Inicio";
+          this.dataSource.paginator._intl.lastPageLabel = "Última página";
           this.ocultarMensaje = true;
           this.spinnerService.hide();
         }
