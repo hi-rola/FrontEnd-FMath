@@ -15,7 +15,7 @@ export class GuardiaAcademicoService implements CanActivate {
       this.router.navigate(['401']);
       return false;
     } else {
-      if (token.charAt(0) == 'a') {
+      if (token.charAt(0) == 'a' || token.charAt(0) == 'd') {
         return true;
       } else {
         this.router.navigate(['401']);
