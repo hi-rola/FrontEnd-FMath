@@ -63,7 +63,7 @@ export class LoginComponent implements OnInit {
                 localStorage.setItem('FMathTk', 'a' + result.token + '&' + result.numeropersonal);
                 this.router.navigate(['/home-academico']);
               } else if (result.rol == 'Academico-Administrador') {
-                localStorage.setItem('FMathTk', 'a' + result.token + '&' + result.numeropersonal);
+                localStorage.setItem('FMathTk', 'd' + result.token + '&' + result.numeropersonal);
                 this.router.navigate(['/home-administrador']);
               }
             }
