@@ -126,7 +126,7 @@ export class UnionN2Component implements OnInit {
         this.solucionRespuestaC = true; // Ocultar solucion respuesta C
         this.solucionRespuestaD = true; // Ocultar solucion respuesta D
 
-        let tipo = 'U-2';
+        let tipo = 'Union-2';
         let puntos = 10;
         let matricula = this.getMatricula();
 

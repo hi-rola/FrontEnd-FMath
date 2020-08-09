@@ -32,13 +32,14 @@ import { DiferenciaN2Component } from './components/estudiante/conjuntos2/ejerci
 import { ComplementoN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/complemento-n2/complemento-n2.component';
 import { DiferenciaSimetricaN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/diferencia-simetrica-n2/diferencia-simetrica-n2.component';
 import { EvaluacionN2Component } from './components/estudiante/conjuntos2/ejercicios-nivel2/evaluacion-n2/evaluacion-n2.component';
+import { TeoriaComplementoComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-complemento/teoria-complemento.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},
   { path: 'login', component: LoginComponent },
   { path: 'home-academico', component: PrincipalAcademicoComponent, canActivate: [GuardiaAcademicoService]},
   { path: 'home-academico/actualizar-inf-estudiante/:id', component: EditarEstudianteComponent, canActivate: [GuardiaAcademicoService]},
-  { path: 'registrar-estudiante', component: RegistrarEstudianteComponent},
+  { path: 'registrar-estudiante', component: RegistrarEstudianteComponent, canActivate: [GuardiaAcademicoService]},
   { path: 'registrar-academico', component: RegistrarAcademicoComponent },
   { path: 'academicos-registrados', component: PrincipalAdministrador2Component },
   { path: 'actualizar-informacion-academico/:id', component: EditarAcademicoComponent },
@@ -54,6 +55,7 @@ const routes: Routes = [
   { path: 'home-estudiante/diferencia', component: TeoriaDiferenciaComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-diferencia-1', component: DiferenciaN1Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-diferencia-2', component: DiferenciaN2Component, canActivate: [GuardiaEstudianteService]},
+  { path: 'home-estudiante/complemento', component: TeoriaComplementoComponent, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-complemento-1', component: ComplementoN1Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/practicar-complemento-2', component: ComplementoN2Component, canActivate: [GuardiaEstudianteService]},
   { path: 'home-estudiante/diferenica-simetrica', component: TeoriaDiferenciaSimetricaComponent, canActivate: [GuardiaEstudianteService]},

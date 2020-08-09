@@ -108,7 +108,7 @@ export class DiferenciaN2Component implements OnInit {
         this.solucionRespuestaC = true; // Ocultar solucion respuesta C
         this.solucionRespuestaD = true; // Ocultar solucion respuesta D
 
-        let tipo = 'D-2';
+        let tipo = 'Diferencia-2';
         let puntos = 10;
         let matricula = this.getMatricula();
 

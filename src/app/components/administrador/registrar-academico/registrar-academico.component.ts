@@ -9,6 +9,7 @@ import { AdministradorService } from 'src/app/services/administrador.service';
 import { MatDialog, MatSnackBar, MatSnackBarVerticalPosition, MatSnackBarHorizontalPosition } from '@angular/material';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { Router } from '@angular/router';
+import { LoginService } from '../../../services/login.service';
 
 @Component({
   selector: 'app-registrar-academico',
@@ -27,7 +28,7 @@ export class RegistrarAcademicoComponent implements OnInit {
   mostrarLoader = false;
 
   constructor(private dialog: MatDialog, private _snackBar: MatSnackBar, private router: Router,
-    private serviceAdmin: AdministradorService, private spinnerService: NgxSpinnerService) {
+    private serviceAdmin: AdministradorService, private spinnerService: NgxSpinnerService, private loginService: LoginService) {
     this.academicoForm = this.createAcademicoForm();
   }
 
@@ -89,7 +90,7 @@ export class RegistrarAcademicoComponent implements OnInit {
 
                   this.spinnerService.hide();
                   this.router.navigate(['/academicos-registrados']);
-                  
+
                 } else {
                   this._snackBar.openFromComponent(MsjExisteAcademicoComponent, {
                     duration: this.tiempoSegundos * 400,
@@ -126,6 +127,7 @@ export class RegistrarAcademicoComponent implements OnInit {
   }
 
   volverInicio() {
+    /*
     if (this.academicoForm.get('numeroPersonal').value !== undefined && this.academicoForm.get('numeroPersonal').value !== ''
       || this.academicoForm.get('nombreCompleto').value !== undefined && this.academicoForm.get('nombreCompleto').value !== ''
       || this.academicoForm.get('usuario').value !== undefined && this.academicoForm.get('usuario').value !== ''
@@ -138,6 +140,17 @@ export class RegistrarAcademicoComponent implements OnInit {
       });
     } else {
       this.router.navigate(['/academicos-registrados']);
+    }*/
+
+    const tipoUsuario = this.getTipoUsuario();
+    console.log('tipo :' + tipoUsuario)
+    if(tipoUsuario === 'a'){
+      this.router.navigate(['/home-academico']);
     }
+  }
+
+  getTipoUsuario(): string {
+    const tipoUsuario = this.loginService.getTipoUsuario();
+    return tipoUsuario;
   }
 }

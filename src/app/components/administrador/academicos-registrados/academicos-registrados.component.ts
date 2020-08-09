@@ -1,11 +1,12 @@
 import { Component, OnInit, ViewChild, ViewEncapsulation } from '@angular/core';
 import { Academico } from 'src/app/models/Academico';
-import { MatTableDataSource, MatDialog, MatSnackBar, MatPaginator, MatSort } from '@angular/material';
+import { MatTableDataSource, MatDialog, MatSnackBar, MatPaginator, MatSort, MatSnackBarVerticalPosition, MatSnackBarHorizontalPosition } from '@angular/material';
 import { MsjCambiarEstatusComponent } from '../../mensajes-de-confirmacion/msj-cambiar-estatus/msj-cambiar-estatus.component';
 import { AdministradorService } from 'src/app/services/administrador.service';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { AcademicoService } from 'src/app/services/academico.service';
 import { Router } from '@angular/router';
+import { MsjEstatusActualizadoComponent } from '../../mensajes-de-confirmacion/msj-estatus-actualizado/msj-estatus-actualizado.component';
 
 @Component({
   selector: 'app-academicos-registrados',
@@ -18,6 +19,9 @@ export class AcademicosRegistradosComponent implements OnInit {
   listAcademicos: Academico[];
   dataSource = null;
   ocultarMensaje = true;
+  posicionVertical: MatSnackBarVerticalPosition = 'bottom';
+  posicionHorizontal: MatSnackBarHorizontalPosition = 'left';
+  tiempoSegundos = 10;
 
   displayedColumns: string[] = ['numeropersonal', 'nombrecompleto', 'correoinstitucional', 'estatus', 'actions'];
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -70,6 +74,12 @@ export class AcademicosRegistradosComponent implements OnInit {
 
           this.serviceAdmin.actualizarAcademico(nuevoAc).subscribe(
             result => {
+              this._snackBar.openFromComponent(MsjEstatusActualizadoComponent, {
+                duration: this.tiempoSegundos * 400,
+                horizontalPosition: this.posicionHorizontal,
+                verticalPosition: this.posicionVertical,
+                panelClass: ['msj-estatus-actualizado']
+              });
               this.mostrarAcademicos();
             }
           );
@@ -85,9 +95,11 @@ export class AcademicosRegistradosComponent implements OnInit {
     this.spinnerService.show();
     this.serviceAdmin.getTodosAcademicos().subscribe(
       result => {
+        console.log('entro 1');
         this.listAcademicos = result;
         if (this.listAcademicos.length === 0) {
           this.ocultarMensaje = false;
+          console.log('entro');
           this.spinnerService.hide();
         } else if (this.listAcademicos.length > 0) {
           this.listAcademicos = result;

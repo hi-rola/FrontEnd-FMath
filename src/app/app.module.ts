@@ -78,6 +78,7 @@ import { ComplementoN2Component } from './components/estudiante/conjuntos2/ejerc
 import { MsjComplementoN1FinalizadoComponent } from './components/estudiante/conjuntos1/ejercicios-nivel1/complemento-n1/msj-complemento-n1-finalizado/msj-complemento-n1-finalizado.component';
 import { MsjComplementoN2FinalizadoComponent } from './components/estudiante/conjuntos2/ejercicios-nivel2/complemento-n2/msj-complemento-n2-finalizado/msj-complemento-n2-finalizado.component';
 import { MsjEstatusActualizadoComponent } from './components/mensajes-de-confirmacion/msj-estatus-actualizado/msj-estatus-actualizado.component';
+import { TeoriaComplementoComponent } from './components/estudiante/conjuntos1/teoria-nivel1/teoria-complemento/teoria-complemento.component';
 
 
 @NgModule({
@@ -98,7 +99,7 @@ import { MsjEstatusActualizadoComponent } from './components/mensajes-de-confirm
     MsjDiferenciaSimetricaN2FinalizadoComponent, EvaluacionN2Component, MsjEvaluacionN2Component, MsjEvaluacionN2FinalizadoComponent,
     InterseccionN2Component, MsjInterseccionN2FinalizadoComponent, UnionN2Component, MsjUnionN2FinalizadoComponent, Encabezado401Component, 
     ComplementoN1Component, ComplementoN2Component, MsjComplementoN1FinalizadoComponent, MsjComplementoN2FinalizadoComponent, 
-    MsjEstatusActualizadoComponent,
+    MsjEstatusActualizadoComponent, TeoriaComplementoComponent,
   ],
   imports: [
     BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialDesignModule, HttpClientModule,
