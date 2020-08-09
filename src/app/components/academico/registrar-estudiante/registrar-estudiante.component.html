@@ -3,7 +3,7 @@
   <mat-card-header class="card-header">
     <div class="div-registrar-estudiante">
       <div class="div-volver-estudiante">
-        <button mat-icon-button (click)="volverInicio()" matTooltip="Atrás" matTooltipClass="cerrar-sesion">
+        <button mat-icon-button (click)="volverInicio()" matTooltip="Volver" matTooltipClass="cerrar-sesion">
           <mat-icon class="icono-volver-estudiante">keyboard_backspace</mat-icon>
         </button>
       </div>
@@ -36,7 +36,6 @@
           </mat-error>
         </mat-error>
       </mat-form-field>
-
       <mat-form-field class="mat-form">
         <mat-label>Correo institucional</mat-label>
         <input matInput placeholder="Eje. zs16013998@estudiantes.uv.mx" formControlName='correoInstitucional'>
@@ -50,7 +49,6 @@
           </mat-error>
         </mat-error>
       </mat-form-field>
-
       <mat-form-field class="mat-form">
         <input matInput placeholder="Contraseña" formControlName='contrasena' type="password" minlength="6">
         <mat-error *ngIf="alumnoForm.controls['contrasena'].touched || !alumnoForm.controls['contrasena'].valid 
