@@ -14,21 +14,4 @@ export class IntroduccionConjuntosComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  enviar(){
-    let tipo = 'Diferencia 2';
-    let puntos = 20;
-    let matricula = 'zs16013998';
-
-    let puntajeEstudiante : PuntajeEjercicio = new PuntajeEjercicio(
-        puntos, tipo, matricula
-    );
-
-    this.puntajeEstudianteService.resgistrarPuntaje(puntajeEstudiante).subscribe(
-      result =>{
-        console.log(result);
-      }
-    );
-
-  }
 }
