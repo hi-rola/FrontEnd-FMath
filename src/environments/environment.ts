@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backEndURL: 'http://localhost:8888/CoFI',
+  backEndURL: 'http://localhost:8888/FMath',
 };
 
 /*
