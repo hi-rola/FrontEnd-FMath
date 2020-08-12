@@ -98,11 +98,9 @@ export class AcademicosRegistradosComponent implements OnInit {
         this.listAcademicos = result;
         if (this.listAcademicos.length === 0) {
           this.ocultarMensaje = false;
-          console.log('entro');
           this.spinnerService.hide();
         } else if (this.listAcademicos.length > 0) {
           this.listAcademicos = result;
-          console.log(this.listAcademicos)
           this.dataSource = new MatTableDataSource<Academico>(this.listAcademicos);
           this.dataSource.paginator = this.paginator;
           this.dataSource.sort = this.sort;
