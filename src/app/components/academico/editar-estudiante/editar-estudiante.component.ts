@@ -27,7 +27,8 @@ export class EditarEstudianteComponent implements OnInit {
   mostrarLoader = false;
 
   constructor(public dialog: MatDialog, private _snackBar: MatSnackBar, private router: Router, private servicioAC: AcademicoService,
-    private login: LoginService, private route: ActivatedRoute, private spinnerService: NgxSpinnerService) {
+    private login: LoginService, private route: ActivatedRoute, private spinnerService: NgxSpinnerService, 
+    private loginService: LoginService) {
     this.alumnoForm = this.createAlumnoForm();
   }
 
@@ -93,7 +94,12 @@ export class EditarEstudianteComponent implements OnInit {
                     panelClass: ['msj-estudiante-actualizado']
                   });
                   this.spinnerService.hide();
-                  this.router.navigate(['/home-administrador']);
+                  let tipoUsuario = this.getTipoUsuario();
+                  if (tipoUsuario === 'a') {
+                    this.router.navigate(['/home-academico']);
+                  } else if (tipoUsuario === 'd') {
+                    this.router.navigate(['/home-administrador']);
+                  }
                 }
               },
               error => console.log('Error: ', error)
@@ -134,5 +140,10 @@ export class EditarEstudianteComponent implements OnInit {
     } else {
       this.router.navigate(['/home-administrador']);
     }
+  }
+
+  getTipoUsuario(): string {
+    const tipoUsuario = this.loginService.getTipoUsuario();
+    return tipoUsuario;
   }
 }
