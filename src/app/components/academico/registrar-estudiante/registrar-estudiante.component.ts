@@ -93,7 +93,12 @@ export class RegistrarEstudianteComponent implements OnInit {
                     panelClass: ['msj-estudiante-registrado']
                   });
                   this.spinnerService.hide();
-                  this.router.navigate(['/home-administrador']);
+                  let tipoUsuario = this.getTipoUsuario();
+                  if(tipoUsuario === 'a'){
+                    this.router.navigate(['/home-academico']);
+                  }else if(tipoUsuario === 'd'){
+                    this.router.navigate(['/home-administrador']);
+                  }
                 }
               },
               error => { console.log(error) }
