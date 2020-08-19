@@ -1,4 +1,4 @@
-#contenido-principal {
+#contenido-principal-acerca-de {
   background: white;
   padding: 0;
   margin: 0 auto;
@@ -79,9 +79,9 @@
 }
 
 @media screen and (max-width: 600px) {
-  #contenido-principal {
+  #contenido-principal-acerca-de {
     height: 550px !important;
-    margin-bottom: 4%;
+    margin-bottom: 90px;
   }
 
   .card-content {
